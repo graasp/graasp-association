@@ -42,7 +42,7 @@ const Footer = () => (
       }
     `}
     render={data => (
-      <React.Fragment>
+      <>
         <Art>
           <Img
             fluid={data.art_pot.childImageSharp.fluid}
@@ -70,7 +70,7 @@ const Footer = () => (
             </SocialIcons>
           </StyledContainer>
         </FooterWrapper>
-      </React.Fragment>
+      </>
     )}
   />
 );
