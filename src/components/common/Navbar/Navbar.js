@@ -14,7 +14,6 @@ import {
   Mobile,
 } from './style';
 
-
 const NAV_ITEMS = ['About', 'Brands', 'Team', 'FAQ'];
 
 class Navbar extends Component {
@@ -27,7 +26,8 @@ class Navbar extends Component {
   };
 
   closeMobileMenu = () => {
-    if (this.state.mobileMenuOpen) {
+    const { mobileMenuOpen } = this.state;
+    if (mobileMenuOpen) {
       this.setState({ mobileMenuOpen: false });
     }
   };
@@ -57,11 +57,16 @@ class Navbar extends Component {
     const { mobileMenuOpen } = this.state;
 
     return (
+      // eslint-disable-next-line react/jsx-props-no-spreading
       <Nav {...this.props}>
         <StyledContainer>
           <Brand>Absurd</Brand>
           <Mobile>
-            <button onClick={this.toggleMobileMenu} style={{ color: 'black' }}>
+            <button
+              type="button"
+              onClick={this.toggleMobileMenu}
+              style={{ color: 'black' }}
+            >
               <MenuIcon />
             </button>
           </Mobile>

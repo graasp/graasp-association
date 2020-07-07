@@ -17,6 +17,24 @@ export const StyledContainer = styled(Container)`
   align-items: center;
 `;
 
+export const NavItem = styled.li`
+  margin: 0 0.75em;
+  font-family: ${props => props.theme.font.secondary};
+  ${props => props.theme.font_size.small};
+
+  a {
+    text-decoration: none;
+    opacity: 0.7;
+    color: ${props => props.theme.color.black.regular};
+  }
+
+  &.active {
+    a {
+      opacity: 1;
+    }
+  }
+`;
+
 export const NavListWrapper = styled.div`
   ul {
     list-style: none;
@@ -36,24 +54,6 @@ export const NavListWrapper = styled.div`
           margin-top: 0.75em;
         }
       `};
-  }
-`;
-
-export const NavItem = styled.li`
-  margin: 0 0.75em;
-  font-family: ${props => props.theme.font.secondary};
-  ${props => props.theme.font_size.small};
-
-  a {
-    text-decoration: none;
-    opacity: 0.7;
-    color: ${props => props.theme.color.black.regular};
-  }
-
-  &.active {
-    a {
-      opacity: 1;
-    }
   }
 `;
 

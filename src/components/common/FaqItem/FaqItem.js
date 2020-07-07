@@ -1,8 +1,9 @@
 import React from 'react';
 import Collapsible from 'react-collapsible';
 
-import { Wrapper } from './style';
+import Wrapper from './style';
 
+// eslint-disable-next-line react/prop-types
 const FaqItem = ({ title, children }) => (
   <Wrapper>
     <Collapsible

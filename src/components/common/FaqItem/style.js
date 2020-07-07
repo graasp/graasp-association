@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   &:hover {
     cursor: pointer;
   }
@@ -54,3 +54,5 @@ export const Wrapper = styled.div`
     color: ${props => props.theme.color.black.light};
   }
 `;
+
+export default Wrapper;
