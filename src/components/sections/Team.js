@@ -7,34 +7,34 @@ import { Section, Container } from '@components/global';
 
 const TEAM = [
   {
-    name: 'Josh Peck',
-    image: 'josh.jpg',
-    role: 'Founder',
+    name: 'Denis Gillet',
+    image: 'denis.png',
+    role: 'Head',
   },
   {
-    name: 'Lisa Haydon',
-    image: 'lisa.jpg',
-    role: 'Art Director',
+    name: 'Isabelle Vonèche Cardia',
+    image: 'isabelle.jpg',
+    role: 'Research Associate',
   },
   {
-    name: 'Ashlyn Harris',
+    name: 'Juan Carlos Farah',
+    image: 'juancarlos.jpg',
+    role: 'Software Engineer',
+  },
+  {
+    name: 'André Nogueira',
     image: 'ashlyn.jpg',
-    role: 'Frontend Engineer',
+    role: 'Software Engineer',
   },
   {
-    name: 'Todd Joseph',
-    image: 'todd.jpg',
-    role: 'Designer',
-  },
-  {
-    name: 'Martin White',
+    name: 'Kim Lan Phan Hoang',
     image: 'martin.jpg',
-    role: 'Backend Engineer',
+    role: 'Software Engineer',
   },
   {
-    name: 'Rose Leslie',
+    name: 'Hagop Taminian',
     image: 'rose.jpg',
-    role: 'Marketing',
+    role: 'Software Engineer',
   },
 ];
 
@@ -73,12 +73,16 @@ const Team = () => (
           <TeamGrid>
             {TEAM.map(({ name, image, role }) => {
               const img = data.allFile.edges.find(
-                ({ node }) => node.relativePath === image
+                ({ node }) => node.relativePath === image,
               ).node;
 
               return (
                 <div key={name}>
-                  <Img fluid={img.childImageSharp.fluid} alt={name} />
+                  <Img
+                    fluid={img.childImageSharp.fluid}
+                    alt={name}
+                    style={{ borderRadius: '50%' }}
+                  />
                   <Title>{name}</Title>
                   <Subtitle>{role}</Subtitle>
                 </div>
@@ -99,7 +103,7 @@ const Team = () => (
 
 const TeamGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-columns: repeat(auto-fill, 165px);
   grid-template-rows: min-content;
   grid-gap: 50px;
   justify-content: space-between;
@@ -149,12 +153,13 @@ const ArtMobile = styled.figure`
 `;
 
 const Title = styled.p`
+  ${props => props.theme.font_size.small};
   margin-top: 16px;
   color: ${props => props.theme.color.black.regular};
 `;
 
 const Subtitle = styled.p`
-  ${props => props.theme.font_size.small};
+  ${props => props.theme.font_size.smaller};
   color: ${props => props.theme.color.black.light};
 `;
 

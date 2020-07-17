@@ -14,7 +14,7 @@ import {
   Mobile,
 } from './style';
 
-const NAV_ITEMS = ['About', 'Brands', 'Team', 'FAQ'];
+const NAV_ITEMS = ['About', 'Partners', 'Team', 'FAQ'];
 
 class Navbar extends Component {
   state = {
@@ -60,7 +60,7 @@ class Navbar extends Component {
       // eslint-disable-next-line react/jsx-props-no-spreading
       <Nav {...this.props}>
         <StyledContainer>
-          <Brand>Absurd</Brand>
+          <Brand>Graasp</Brand>
           <Mobile>
             <button
               type="button"

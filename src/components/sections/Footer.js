@@ -1,79 +1,120 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
-import { Container } from '@components/global';
+import { Section, Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
+import { ReactComponent as EcLogo } from '@images/sponsors/ec.svg';
+import { ReactComponent as EPFLLogo } from '@images/sponsors/epfl.svg';
+import { ReactComponent as SwissUniLogo } from '@images/sponsors/swissuniversities.svg';
+
+import { ReactComponent as GraaspLogoDark } from '@images/art/handDark.svg';
+
 import GithubIcon from '@static/icons/github.svg';
-import InstagramIcon from '@static/icons/instagram.svg';
-import TwitterIcon from '@static/icons/twitter.svg';
+import WebIcon from '@static/icons/web.svg';
+import LinkedInIcon from '@static/icons/linkedin.svg';
+
+const LOGOS = [
+  {
+    logo: EcLogo,
+    link: 'https://ec.europa.eu/info/index_en',
+  },
+  {
+    logo: EPFLLogo,
+    link: 'https://www.epfl.ch/en/',
+  },
+  {
+    logo: SwissUniLogo,
+    link: 'https://www.swissuniversities.ch',
+  },
+];
 
 const SOCIAL = [
   {
+    icon: LinkedInIcon,
+    link: 'https://www.linkedin.com/company/graasp',
+  },
+  {
     icon: GithubIcon,
-    link: 'https://github.com/ajayns/gatsby-absurd',
+    link: 'https://github.com/graasp/',
   },
   {
-    icon: InstagramIcon,
-    link: 'https://instagram.com/ajay_ns',
-  },
-  {
-    icon: TwitterIcon,
-    link: 'https://twitter.com/ajayns08',
+    icon: WebIcon,
+    link: 'https://graasp.eu',
   },
 ];
 
 const Footer = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        art_pot: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "customers_pot" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 960) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Art>
-          <Img
-            fluid={data.art_pot.childImageSharp.fluid}
-            style={{ width: 480, maxWidth: '100%', marginBottom: -16 }}
-          />
-        </Art>
-        <FooterWrapper>
-          <StyledContainer>
-            <Copyright>
-              <h2>Absurd</h2>
-              <span>
-                Illustrations by
-                {` `}
-                <ExternalLink href="https://twitter.com/diana_valeanu">
-                  @diana_valeanu
-                </ExternalLink>
-              </span>
-            </Copyright>
-            <SocialIcons>
-              {SOCIAL.map(({ icon, link }) => (
-                <ExternalLink key={link} href={link}>
-                  <img src={icon} alt="link" />
-                </ExternalLink>
-              ))}
-            </SocialIcons>
-          </StyledContainer>
-        </FooterWrapper>
-      </>
-    )}
-  />
+  <>
+    <Section accent="secondary" style={{ paddingTop: 48, paddingBottom: 48 }}>
+      <StyledLogoContainer>
+        <div>
+          <h3 style={{ textAlign: 'center' }}>
+            The Graasp Association is supported by
+          </h3>
+          <LogoGrid>
+            {LOGOS.map(({ logo, link }) => (
+              <ExternalLink
+                key={link}
+                href={link}
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                {logo()}
+              </ExternalLink>
+            ))}
+          </LogoGrid>
+        </div>
+      </StyledLogoContainer>
+    </Section>
+    <Art>
+      <GraaspLogoDark style={{ marginBottom: 12 }} />
+    </Art>
+    <FooterWrapper>
+      <StyledContainer>
+        <Copyright>© Graasp Association 2020</Copyright>
+        <SocialIcons>
+          {SOCIAL.map(({ icon, link }) => (
+            <ExternalLink key={link} href={link}>
+              <img src={icon} alt="link" />
+            </ExternalLink>
+          ))}
+        </SocialIcons>
+      </StyledContainer>
+    </FooterWrapper>
+  </>
 );
+
+const LogoGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 64px;
+  justify-items: center;
+  margin-top: 96px;
+
+  a {
+    svg {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const StyledLogoContainer = styled(Container)`
+  margin: 0 auto;
+  position: relative;
+  color: ${props => props.theme.color.black.regular};
+
+  @media (max-width: ${props => props.theme.screen.md}) {
+    justify-content: center;
+  }
+`;
 
 const SocialIcons = styled.div`
   display: flex;
@@ -96,8 +137,7 @@ const FooterWrapper = styled.footer`
 
 const Copyright = styled.div`
   font-family: ${props => props.theme.font.secondary};
-  ${props => props.theme.font_size.small};
-  color: ${props => props.theme.color.black.regular};
+  color: ${props => props.theme.color.white.regular};
 
   a {
     text-decoration: none;
