@@ -19,7 +19,18 @@ const NAV_ITEMS = ['About', 'Partners', 'Team', 'FAQ'];
 class Navbar extends Component {
   state = {
     mobileMenuOpen: false,
+    opacityIncrement: 0,
   };
+
+  componentDidMount() {
+    window.onscroll = () => {
+      const newOpacityIncrement = Math.floor(window.scrollY / 150) / 20;
+      const { opacityIncrement } = this.state;
+      if (opacityIncrement !== newOpacityIncrement) {
+        this.setState({ opacityIncrement: newOpacityIncrement });
+      }
+    };
+  }
 
   toggleMobileMenu = () => {
     this.setState(prevState => ({ mobileMenuOpen: !prevState.mobileMenuOpen }));
@@ -55,10 +66,17 @@ class Navbar extends Component {
 
   render() {
     const { mobileMenuOpen } = this.state;
+    let opacity;
+    const { opacityIncrement } = this.state;
+    if (opacityIncrement > 0.2) {
+      opacity = 1;
+    } else {
+      opacity = 0.8 + opacityIncrement;
+    }
 
     return (
       // eslint-disable-next-line react/jsx-props-no-spreading
-      <Nav {...this.props}>
+      <Nav {...this.props} style={{ opacity }}>
         <StyledContainer>
           <Brand>Graasp</Brand>
           <Mobile>

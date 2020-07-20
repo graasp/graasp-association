@@ -13,7 +13,7 @@ const Background = ({ children }) => (
         ) {
           childImageSharp {
             fluid(maxWidth: 2400) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid
             }
           }
         }

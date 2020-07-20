@@ -5,6 +5,7 @@ import { Container } from '@components/global';
 export const Nav = styled.nav`
   padding: 16px 0;
   background-color: ${props => props.theme.color.primary};
+  opacity: 0.8;
   position: fixed;
   width: 100%;
   top: 0;

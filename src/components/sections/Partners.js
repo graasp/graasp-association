@@ -5,10 +5,10 @@ import { Section, Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
 import { ReactComponent as GenevaLogo } from '@images/logos/geneva.svg';
-import { ReactComponent as UNCTADLogo } from '@images/logos/unctad.svg';
-import { ReactComponent as GolabLogo } from '@images/logos/golab.svg';
+import { ReactComponent as UnctadLogo } from '@images/logos/unctad.svg';
+import { ReactComponent as GoLabLogo } from '@images/logos/golab.svg';
 import { ReactComponent as ColliderLogo } from '@images/logos/collider.svg';
-import { ReactComponent as EPFLInnovationLogo } from '@images/logos/epfl-innovation.svg';
+import { ReactComponent as EpflInnovationLogo } from '@images/logos/epfl-innovation.svg';
 
 const LOGOS = [
   {
@@ -16,7 +16,7 @@ const LOGOS = [
     link: 'https://www.ge.ch',
   },
   {
-    logo: UNCTADLogo,
+    logo: UnctadLogo,
     link: 'https://unctad.org',
   },
   {
@@ -24,11 +24,11 @@ const LOGOS = [
     link: 'https://www.edtech-collider.ch',
   },
   {
-    logo: EPFLInnovationLogo,
+    logo: EpflInnovationLogo,
     link: 'https://epfl-innovationpark.ch',
   },
   {
-    logo: GolabLogo,
+    logo: GoLabLogo,
     link: 'https://www.golabz.eu',
   },
 ];

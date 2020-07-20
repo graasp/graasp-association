@@ -13,8 +13,8 @@ import Background from '@sections/Background';
 
 const IndexPage = () => (
   <Layout>
+    <Navbar />
     <Background>
-      <Navbar />
       <Header />
     </Background>
     <About />

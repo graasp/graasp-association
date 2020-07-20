@@ -124,6 +124,7 @@ const About = () => (
 
 const Art = styled.figure`
   margin: 0;
+  z-index: -1000;
   max-width: 380px;
   width: 100%;
 `;

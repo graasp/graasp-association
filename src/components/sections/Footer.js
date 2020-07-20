@@ -5,7 +5,7 @@ import { Section, Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
 import { ReactComponent as EcLogo } from '@images/sponsors/ec.svg';
-import { ReactComponent as EPFLLogo } from '@images/sponsors/epfl.svg';
+import { ReactComponent as EpflLogo } from '@images/sponsors/epfl.svg';
 import { ReactComponent as SwissUniLogo } from '@images/sponsors/swissuniversities.svg';
 
 import { ReactComponent as GraaspLogoDark } from '@images/art/handDark.svg';
@@ -20,7 +20,7 @@ const LOGOS = [
     link: 'https://ec.europa.eu/info/index_en',
   },
   {
-    logo: EPFLLogo,
+    logo: EpflLogo,
     link: 'https://www.epfl.ch/en/',
   },
   {

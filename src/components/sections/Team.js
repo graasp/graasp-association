@@ -9,17 +9,22 @@ const TEAM = [
   {
     name: 'Denis Gillet',
     image: 'denis.png',
-    role: 'Head',
+    role: 'President',
   },
   {
     name: 'Isabelle Vonèche Cardia',
     image: 'isabelle.jpg',
-    role: 'Research Associate',
+    role: 'Vice President',
   },
   {
     name: 'Juan Carlos Farah',
     image: 'juancarlos.jpg',
     role: 'Software Engineer',
+  },
+  {
+    name: 'María Jesús Rodríguez-Triana',
+    image: 'lisa.jpg',
+    role: 'Vice President',
   },
   {
     name: 'André Nogueira',

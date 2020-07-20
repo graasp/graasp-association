@@ -12,8 +12,8 @@ const Header = () => (
         <Art>{GraaspLogo()}</Art>
         <Text>
           <h1>
-            Graasp is a non-profit organization promoting innovation in digital
-            education
+            Graasp is a Non-Profit Organization Promoting Innovation in Digital
+            Education
           </h1>
         </Text>
       </Grid>
