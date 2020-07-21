@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 0 16px;
+  color: ${props => props.theme.color.black.regular};
 
   @media (min-width: ${props => props.theme.screen.xs}) {
     max-width: 540px;

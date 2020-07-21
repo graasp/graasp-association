@@ -2,13 +2,14 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 const SEO_DATA = {
-  description: 'An absurd gatsby starter',
-  title: 'Absurd',
+  description:
+    'The Graasp Association supports innovation in digital education.',
+  title: 'Graasp Association',
   url: '',
-  author: 'ajayns',
-  keywords: ['gatsby', 'site', 'absurd'],
+  author: 'Graasp',
+  keywords: ['Graasp', 'Graasp Association', 'digital education', 'EPFL'],
   img: '',
-  twitterId: '@ajayns_',
+  twitterId: '',
   facebookId: '',
 };
 

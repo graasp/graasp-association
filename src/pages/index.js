@@ -5,17 +5,20 @@ import Navbar from '@common/Navbar';
 
 import Header from '@sections/Header';
 import About from '@sections/About';
-import Brands from '@sections/Brands';
+import Partners from '@sections/Partners';
 import Team from '@sections/Team';
 import Faq from '@sections/Faq';
 import Footer from '@sections/Footer';
+import Background from '@sections/Background';
 
 const IndexPage = () => (
   <Layout>
     <Navbar />
-    <Header />
+    <Background>
+      <Header />
+    </Background>
     <About />
-    <Brands />
+    <Partners />
     <Team />
     <Faq />
     <Footer />

@@ -14,12 +14,26 @@ import {
   Mobile,
 } from './style';
 
-const NAV_ITEMS = ['About', 'Brands', 'Team', 'FAQ'];
+const NAV_ITEMS = ['About', 'Partners', 'Team', 'FAQ'];
 
 class Navbar extends Component {
   state = {
     mobileMenuOpen: false,
+    opacityIncrement: 0,
   };
+
+  // code in componentDidMount darkens the initially transparent navbar as we scroll down the page
+  // the NavBar initially has opacity of 0.8 (see ./style.js)
+  // each 150px of scrollY result in an opacity increment of 0.05, set on state via newOpacityIncrement
+  componentDidMount() {
+    window.onscroll = () => {
+      const newOpacityIncrement = Math.floor(window.scrollY / 150) / 20;
+      const { opacityIncrement } = this.state;
+      if (opacityIncrement !== newOpacityIncrement) {
+        this.setState({ opacityIncrement: newOpacityIncrement });
+      }
+    };
+  }
 
   toggleMobileMenu = () => {
     this.setState(prevState => ({ mobileMenuOpen: !prevState.mobileMenuOpen }));
@@ -56,11 +70,21 @@ class Navbar extends Component {
   render() {
     const { mobileMenuOpen } = this.state;
 
+    // this extracts the opacityIncrement from state, and uses it to determine final opacity
+    // final opacity is set as a prop on the Nav component in the return statement below
+    let opacity;
+    const { opacityIncrement } = this.state;
+    if (opacityIncrement > 0.2) {
+      opacity = 1;
+    } else {
+      opacity = 0.8 + opacityIncrement;
+    }
+
     return (
       // eslint-disable-next-line react/jsx-props-no-spreading
-      <Nav {...this.props}>
+      <Nav {...this.props} style={{ opacity }}>
         <StyledContainer>
-          <Brand>Absurd</Brand>
+          <Brand>Graasp</Brand>
           <Mobile>
             <button
               type="button"

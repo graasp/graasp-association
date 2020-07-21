@@ -3,64 +3,71 @@ import React from 'react';
 import { Section, Container } from '@components/global';
 
 import FaqItem from '@common/FaqItem';
-import ExternalLink from '@common/ExternalLink';
 
 const FAQS = [
   {
-    title: 'What tech does Gatsby use?',
+    title: 'What does Graasp do?',
     content: () => (
       <>
-        Enjoy the power of the latest web technologies – React.js , Webpack ,
-        modern JavaScript and CSS and more — all set up and waiting for you to
-        start building
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+        ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type.
       </>
     ),
   },
   {
-    title: 'Where can you source data from?',
+    title: "What are Graasp's products?",
     content: () => (
       <>
-        Gatsby’s rich data plugin ecosystem lets you build sites with the data
-        you want — from one or many sources: Pull data from headless CMSs, SaaS
-        services, APIs, databases, your file system, and more directly into your
-        pages using GraphQL.
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+        ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type.
       </>
     ),
   },
   {
-    title: 'How do I scale Gatsby sites?',
+    title: 'Who uses Graasp?',
     content: () => (
       <>
-        Gatsby.js is Internet Scale. Forget complicated deploys with databases
-        and servers and their expensive, time-consuming setup costs,
-        maintenance, and scaling fears. Gatsby.js builds your site as “static”
-        files which can be deployed easily on dozens of services.
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+        ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type.
       </>
     ),
   },
   {
-    title: 'How does do I future-proof my website?',
+    title: 'How can I get started?',
     content: () => (
       <>
-        Do not build a website with last decade’s tech. The future of the web is
-        mobile, JavaScript and APIs—the
-        {` `}
-        <ExternalLink href="https://jamstack.org/">JAMstack</ExternalLink>
-        .
-        Every website is a web app and every web app is a website. Gatsby.js is
-        the universal JavaScript framework you’ve been waiting for.
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+        ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type.
       </>
     ),
   },
   {
-    title: 'What exactly does Gatsby build?',
+    title: 'How much does it cost?',
     content: () => (
       <>
-        Gatsby.js is a static PWA (Progressive Web App) generator. You get code
-        and data splitting out-of-the-box. Gatsby loads only the critical HTML,
-        CSS, data, and JavaScript so your site loads as fast as possible. Once
-        loaded, Gatsby prefetches resources for other pages so clicking around
-        the site feels incredibly fast.
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+        ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type.
+      </>
+    ),
+  },
+  {
+    title: 'Where is Graasp based?',
+    content: () => (
+      <>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+        ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type.
       </>
     ),
   },
@@ -69,7 +76,9 @@ const FAQS = [
 const Faq = () => (
   <Section id="faq">
     <Container>
-      <h1 style={{ marginBottom: 40 }}>Frequently Asked Questions</h1>
+      <h1 style={{ marginBottom: 40, color: '#211E26' }}>
+        Frequently Asked Questions
+      </h1>
       <div>
         {FAQS.map(({ title, content }) => (
           <FaqItem title={title} key={title}>
