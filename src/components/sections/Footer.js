@@ -71,7 +71,7 @@ const Footer = () => (
       </StyledLogoContainer>
     </Section>
     <Art>
-      <GraaspLogoDark style={{ marginBottom: 12 }} />
+      <GraaspLogoDark style={{ marginBottom: 30 }} />
     </Art>
     <FooterWrapper>
       <StyledContainer>
