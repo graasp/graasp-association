@@ -22,6 +22,9 @@ class Navbar extends Component {
     opacityIncrement: 0,
   };
 
+  // code in componentDidMount darkens the initially transparent navbar as we scroll down the page
+  // the NavBar initially has opacity of 0.8 (see ./style.js)
+  // each 150px of scrollY result in an opacity increment of 0.05, set on state via newOpacityIncrement
   componentDidMount() {
     window.onscroll = () => {
       const newOpacityIncrement = Math.floor(window.scrollY / 150) / 20;
@@ -66,6 +69,9 @@ class Navbar extends Component {
 
   render() {
     const { mobileMenuOpen } = this.state;
+
+    // this extracts the opacityIncrement from state, and uses it to determine final opacity
+    // final opacity is set as a prop on the Nav component in the return statement below
     let opacity;
     const { opacityIncrement } = this.state;
     if (opacityIncrement > 0.2) {
