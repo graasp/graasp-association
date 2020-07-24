@@ -1,3 +1,7 @@
+/* eslint-disable react/no-unused-state */
+// added a piece of 'langugeChanged' state to refresh this component when a language is changed
+// this raises the eslint flag disabled above
+// this section needs reworking (current iteration is to demo language toggle)
 import React, { Component } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Scrollspy from 'react-scrollspy';
@@ -13,6 +17,7 @@ import {
   MobileMenu,
   Mobile,
 } from './style';
+import i18n from '../../../config/i18n/i18n';
 
 const NAV_ITEMS = ['About', 'Partners', 'Team', 'FAQ'];
 
@@ -20,6 +25,7 @@ class Navbar extends Component {
   state = {
     mobileMenuOpen: false,
     opacityIncrement: 0,
+    languageChanged: false,
   };
 
   // code in componentDidMount darkens the initially transparent navbar as we scroll down the page
@@ -48,7 +54,7 @@ class Navbar extends Component {
 
   getNavAnchorLink = item => (
     <AnchorLink href={`#${item.toLowerCase()}`} onClick={this.closeMobileMenu}>
-      {item}
+      {i18n.t(item)}
     </AnchorLink>
   );
 
@@ -94,7 +100,6 @@ class Navbar extends Component {
               <MenuIcon />
             </button>
           </Mobile>
-
           <Mobile hide>{this.getNavList({})}</Mobile>
         </StyledContainer>
         <Mobile>
@@ -103,6 +108,54 @@ class Navbar extends Component {
               <Container>{this.getNavList({ mobile: true })}</Container>
             </MobileMenu>
           )}
+        </Mobile>
+        <Mobile hide>
+          <div style={{ display: 'flex', marginRight: 20, marginLeft: -20 }}>
+            <button
+              style={{
+                color: 'white',
+                opacity: 0.7,
+                fontSize: 14,
+                marginRight: 2,
+                cursor: 'pointer',
+              }}
+              type="button"
+              onClick={() => {
+                i18n.changeLanguage('en');
+                this.setState({ languageChanged: true });
+              }}
+            >
+              {' '}
+              EN
+            </button>
+            <button
+              style={{
+                color: 'white',
+                opacity: 0.7,
+                fontSize: 14,
+                cursor: 'default',
+              }}
+              type="button"
+            >
+              |
+            </button>
+            <button
+              style={{
+                color: 'white',
+                opacity: 0.7,
+                fontSize: 14,
+                marginLeft: 2,
+                cursor: 'pointer',
+              }}
+              type="button"
+              onClick={() => {
+                i18n.changeLanguage('fr');
+                this.setState({ languageChanged: true });
+              }}
+            >
+              FR
+            </button>
+          </div>
         </Mobile>
       </Nav>
     );

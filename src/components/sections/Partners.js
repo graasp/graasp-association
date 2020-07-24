@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { Section, Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
+import { useTranslation } from 'react-i18next';
+
 import { ReactComponent as GenevaLogo } from '@images/logos/geneva.svg';
 import { ReactComponent as UnctadLogo } from '@images/logos/unctad.svg';
 import { ReactComponent as GoLabLogo } from '@images/logos/golab.svg';
@@ -33,32 +35,36 @@ const LOGOS = [
   },
 ];
 
-const UsedBy = () => (
-  <Section id="partners" accent>
-    <StyledContainer>
-      <div>
-        <h2 style={{ textAlign: 'center' }}>
-          Graasp is used by organizations around the world
-        </h2>
-        <LogoGrid>
-          {LOGOS.map(({ logo, link }) => (
-            <ExternalLink
-              key={link}
-              href={link}
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              {logo()}
-            </ExternalLink>
-          ))}
-        </LogoGrid>
-      </div>
-    </StyledContainer>
-  </Section>
-);
+const UsedBy = () => {
+  const { t } = useTranslation();
+
+  return (
+    <Section id="partners" accent>
+      <StyledContainer>
+        <div>
+          <h2 style={{ textAlign: 'center' }}>
+            {t('Graasp is used by organizations around the world')}
+          </h2>
+          <LogoGrid>
+            {LOGOS.map(({ logo, link }) => (
+              <ExternalLink
+                key={link}
+                href={link}
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                {logo()}
+              </ExternalLink>
+            ))}
+          </LogoGrid>
+        </div>
+      </StyledContainer>
+    </Section>
+  );
+};
 
 const LogoGrid = styled.div`
   display: grid;

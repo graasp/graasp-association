@@ -5,122 +5,127 @@ import Img from 'gatsby-image';
 
 import { Section, Container } from '@components/global';
 
-const About = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        art_fast: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
+import { useTranslation } from 'react-i18next';
 
-        art_learn: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "learn_yourself" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
+const About = () => {
+  const { t } = useTranslation();
 
-        art_ideas: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "ideas" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          art_fast: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "fast" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 760) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
-        }
 
-        tell_story: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "tell_story" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          art_learn: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "learn_yourself" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 760) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
+
+          art_ideas: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "ideas" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 760) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
+
+          tell_story: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "tell_story" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 760) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
         }
-      }
-    `}
-    render={data => (
-      <Section id="about">
-        <Container>
-          <Grid>
-            <div>
-              <h2>
-                We help institutions and teachers create open educational
-                resources
-              </h2>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry&apos;s standard
-                dummy text ever since the 1500s, when an unknown printer took a
-                galley of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
-            <Art>
-              <Img fluid={data.art_ideas.childImageSharp.fluid} />
-            </Art>
-          </Grid>
-          <Grid inverse>
-            <Art>
-              <Img fluid={data.art_learn.childImageSharp.fluid} />
-            </Art>
-            <div>
-              <h2>Our products are built with access in mind</h2>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry&apos;s standard
-                dummy text ever since the 1500s, when an unknown printer took a
-                galley of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
-          </Grid>
-          <Grid>
-            <div>
-              <h2>We support with implementation every step of the way</h2>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry&apos;s standard
-                dummy text ever since the 1500s, when an unknown printer took a
-                galley of type and scrambled it to make a type.
-              </p>
-            </div>
-            <Art>
-              <Img fluid={data.art_fast.childImageSharp.fluid} />
-            </Art>
-          </Grid>
-          <Grid inverse>
-            <Art>
-              <Img fluid={data.tell_story.childImageSharp.fluid} />
-            </Art>
-            <div>
-              <h2>We work with developer communities</h2>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry&apos;s standard
-                dummy text ever since the 1500s, when an unknown printer took a
-                galley of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
-          </Grid>
-        </Container>
-      </Section>
-    )}
-  />
-);
+      `}
+      render={data => (
+        <Section id="about">
+          <Container>
+            <Grid>
+              <div>
+                <h2>
+                  {t(
+                    'We help institutions and teachers create open educational resources',
+                  )}
+                </h2>
+                <p>
+                  {t(
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                  )}
+                </p>
+              </div>
+              <Art>
+                <Img fluid={data.art_ideas.childImageSharp.fluid} />
+              </Art>
+            </Grid>
+            <Grid inverse>
+              <Art>
+                <Img fluid={data.art_learn.childImageSharp.fluid} />
+              </Art>
+              <div>
+                <h2>{t('Our products are built with access in mind')}</h2>
+                <p>
+                  {t(
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                  )}
+                </p>
+              </div>
+            </Grid>
+            <Grid>
+              <div>
+                <h2>
+                  {t('We support with implementation every step of the way')}
+                </h2>
+                <p>
+                  {t(
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.",
+                  )}
+                </p>
+              </div>
+              <Art>
+                <Img fluid={data.art_fast.childImageSharp.fluid} />
+              </Art>
+            </Grid>
+            <Grid inverse>
+              <Art>
+                <Img fluid={data.tell_story.childImageSharp.fluid} />
+              </Art>
+              <div>
+                <h2>{t('We work with developer communities')}</h2>
+                <p>
+                  {t(
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                  )}
+                </p>
+              </div>
+            </Grid>
+          </Container>
+        </Section>
+      )}
+    />
+  );
+};
 
 const Art = styled.figure`
   margin: 0;
