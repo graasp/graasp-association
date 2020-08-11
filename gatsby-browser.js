@@ -4,4 +4,5 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+// We use this global.css file to modify styles that come with react-elastic-carousel
+import './src/styles/global.css';

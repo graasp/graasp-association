@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 
 import { Section, Container } from '@components/global';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 const About = () => {
   const { t } = useTranslation();
@@ -66,40 +66,51 @@ const About = () => {
               <div>
                 <h2>
                   {t(
-                    'We help institutions and teachers create open educational resources',
+                    'We help institutions and educators create open learning resources',
                   )}
                 </h2>
                 <p>
                   {t(
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                    'Using our authoring tools, you can create custom digital activities that fit your needs with a few clicks. These activities can be kept private, or shared with your colleagues.',
                   )}
                 </p>
               </div>
               <Art>
-                <Img fluid={data.art_ideas.childImageSharp.fluid} />
+                <Img fluid={data.art_learn.childImageSharp.fluid} />
               </Art>
             </Grid>
             <Grid inverse>
               <Art>
-                <Img fluid={data.art_learn.childImageSharp.fluid} />
+                <Img fluid={data.art_ideas.childImageSharp.fluid} />
               </Art>
               <div>
-                <h2>{t('Our products are built with access in mind')}</h2>
+                <h2>
+                  {t('Our solutions are adaptable to your educational needs')}
+                </h2>
                 <p>
-                  {t(
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                  )}
+                  <Trans>
+                    Built with accessibility in mind, Graasp&apos;s solutions
+                    are available on web, mobile, and desktop devices, both
+                    online and offline. You can choose between our cloud
+                    infrastructure (
+                    <a
+                      href="https://graasp.eu"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Graasp.eu
+                    </a>
+                    ) or on-premise hosting (coming soon!).
+                  </Trans>
                 </p>
               </div>
             </Grid>
             <Grid>
               <div>
-                <h2>
-                  {t('We support with implementation every step of the way')}
-                </h2>
+                <h2>{t('We support you every step of the way')}</h2>
                 <p>
                   {t(
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.",
+                    "Whether you're just getting started with digital education or are an experienced user, we provide support and training to help you achieve your educational objectives.",
                   )}
                 </p>
               </div>
@@ -112,10 +123,10 @@ const About = () => {
                 <Img fluid={data.tell_story.childImageSharp.fluid} />
               </Art>
               <div>
-                <h2>{t('We work with developer communities')}</h2>
+                <h2>{t('Our community of experts is here for you')}</h2>
                 <p>
                   {t(
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                    'If your teaching needs require custom digital experiences, our community of developers and educators are here to help.',
                   )}
                 </p>
               </div>

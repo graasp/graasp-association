@@ -1,0 +1,22 @@
+/* styles to modify react-elastic-carousel circles/dots which appear in Partners section */
+
+.rec.rec-dot {
+  background: transparent;
+  border: 1px #a0a0a0 solid;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  box-shadow: none;
+  margin: 10px 10px;
+}
+
+.rec.rec-dot_active {
+  background: #fff;
+  border: 1px solid #fff;
+  box-shadow: none;
+}
+
+.rec.rec-dot:hover,
+.rec.rec-dot_active:focus {
+  box-shadow: none;
+}

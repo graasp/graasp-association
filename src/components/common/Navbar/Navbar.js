@@ -17,6 +17,7 @@ import {
   MobileMenu,
   Mobile,
 } from './style';
+import TranslationPair from './TranslationPair';
 import i18n from '../../../config/i18n/i18n';
 
 const NAV_ITEMS = ['About', 'Partners', 'Team', 'FAQ'];
@@ -92,13 +93,30 @@ class Navbar extends Component {
         <StyledContainer>
           <Brand>Graasp</Brand>
           <Mobile>
-            <button
-              type="button"
-              onClick={this.toggleMobileMenu}
-              style={{ color: 'black' }}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+              }}
             >
-              <MenuIcon />
-            </button>
+              <TranslationPair
+                englishCallback={() => {
+                  i18n.changeLanguage('en');
+                  this.setState({ languageChanged: true });
+                }}
+                frenchCallback={() => {
+                  i18n.changeLanguage('fr');
+                  this.setState({ languageChanged: true });
+                }}
+              />
+              <button
+                type="button"
+                onClick={this.toggleMobileMenu}
+                style={{ color: 'black' }}
+              >
+                <MenuIcon />
+              </button>
+            </div>
           </Mobile>
           <Mobile hide>{this.getNavList({})}</Mobile>
         </StyledContainer>
@@ -110,52 +128,16 @@ class Navbar extends Component {
           )}
         </Mobile>
         <Mobile hide>
-          <div style={{ display: 'flex', marginRight: 20, marginLeft: -20 }}>
-            <button
-              style={{
-                color: 'white',
-                opacity: 0.7,
-                fontSize: 14,
-                marginRight: 2,
-                cursor: 'pointer',
-              }}
-              type="button"
-              onClick={() => {
-                i18n.changeLanguage('en');
-                this.setState({ languageChanged: true });
-              }}
-            >
-              {' '}
-              EN
-            </button>
-            <button
-              style={{
-                color: 'white',
-                opacity: 0.7,
-                fontSize: 14,
-                cursor: 'default',
-              }}
-              type="button"
-            >
-              |
-            </button>
-            <button
-              style={{
-                color: 'white',
-                opacity: 0.7,
-                fontSize: 14,
-                marginLeft: 2,
-                cursor: 'pointer',
-              }}
-              type="button"
-              onClick={() => {
-                i18n.changeLanguage('fr');
-                this.setState({ languageChanged: true });
-              }}
-            >
-              FR
-            </button>
-          </div>
+          <TranslationPair
+            englishCallback={() => {
+              i18n.changeLanguage('en');
+              this.setState({ languageChanged: true });
+            }}
+            frenchCallback={() => {
+              i18n.changeLanguage('fr');
+              this.setState({ languageChanged: true });
+            }}
+          />
         </Mobile>
       </Nav>
     );

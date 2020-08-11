@@ -18,7 +18,7 @@ const Header = () => {
           <Text>
             <h1>
               {t(
-                'Graasp is a Non-Profit Organization Promoting Innovation in Digital Education',
+                'Graasp is a Non-Profit Organization Promoting Digital Education',
               )}
             </h1>
           </Text>

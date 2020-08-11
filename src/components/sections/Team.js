@@ -16,32 +16,42 @@ const TEAM = [
   {
     name: 'Isabelle Vonèche Cardia',
     image: 'isabelle.jpg',
-    role: 'Vice President',
+    role: 'VP Communication',
   },
   {
     name: 'María Jesús Rodríguez-Triana',
-    image: 'rose.jpg',
-    role: 'Vice President',
+    image: 'maria.jpeg',
+    role: 'VP Education',
   },
   {
     name: 'Juan Carlos Farah',
     image: 'juancarlos.jpg',
-    role: 'Software Engineer',
+    role: 'VP Research',
   },
   {
     name: 'André Nogueira',
-    image: 'ashlyn.jpg',
-    role: 'Software Engineer',
+    image: 'andre.jpeg',
+    role: 'VP Engineering',
+  },
+  {
+    name: 'Joana Machado',
+    image: 'joana.jpg',
+    role: 'Research Collaborator',
   },
   {
     name: 'Kim Lan Phan Hoang',
-    image: 'martin.jpg',
-    role: 'Software Engineer',
+    image: 'kim.jpg',
+    role: 'Software Engineer ',
   },
   {
     name: 'Hagop Taminian',
-    image: 'lisa.jpg',
+    image: 'hagop.jpg',
     role: 'Software Engineer',
+  },
+  {
+    name: 'Sola Olateju',
+    image: 'sola.jpeg',
+    role: 'Community Manager',
   },
 ];
 
