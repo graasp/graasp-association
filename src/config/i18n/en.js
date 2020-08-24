@@ -2,8 +2,8 @@ const en = {
   translations: {
     'Graasp is a Non-Profit Organization Promoting Digital Education':
       'Graasp is a Non-Profit Organization Promoting Digital Education',
-    'We help institutions and educators create open learning resources':
-      'We help institutions and educators create open learning resources',
+    'We help institutions and educators create interactive resources for blended learning':
+      'We help institutions and educators create interactive resources for blended learning',
     'Using our authoring tools, you can create custom digital activities that fit your needs with a few clicks. These activities can be kept private, or shared with your colleagues.':
       'Using our authoring tools, you can create custom digital activities that fit your needs with a few clicks. These activities can be kept private, or shared with your colleagues.',
     'Our solutions are adaptable to your educational needs':
@@ -18,6 +18,10 @@ const en = {
       'Our community of experts is here for you',
     'If your teaching needs require custom digital experiences, our community of developers and educators are here to help.':
       'If your teaching needs require custom digital experiences, our community of developers and educators are here to help.',
+    'We enable open translational research in digital education':
+      'We enable open translational research in digital education',
+    'We provide dedicated services for analyzing and sharing anonymous learning analytics and data. This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.':
+      'We provide dedicated services for analyzing and sharing anonymous learning analytics and data. This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.',
     'Our solutions are used around the world':
       'Our solutions are used around the world',
     'The Team': 'The Team',

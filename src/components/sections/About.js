@@ -47,6 +47,17 @@ const About = () => {
             }
           }
 
+          art_pot: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "customers_pot" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 760) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
+
           tell_story: file(
             sourceInstanceName: { eq: "art" }
             name: { eq: "tell_story" }
@@ -66,7 +77,7 @@ const About = () => {
               <div>
                 <h2>
                   {t(
-                    'We help institutions and educators create open learning resources',
+                    'We help institutions and educators create interactive resources for blended learning',
                   )}
                 </h2>
                 <p>
@@ -120,7 +131,7 @@ const About = () => {
             </Grid>
             <Grid inverse>
               <Art>
-                <Img fluid={data.tell_story.childImageSharp.fluid} />
+                <Img fluid={data.art_pot.childImageSharp.fluid} />
               </Art>
               <div>
                 <h2>{t('Our community of experts is here for you')}</h2>
@@ -130,6 +141,23 @@ const About = () => {
                   )}
                 </p>
               </div>
+            </Grid>
+            <Grid>
+              <div>
+                <h2>
+                  {t(
+                    'We enable open translational research in digital education',
+                  )}
+                </h2>
+                <p>
+                  {t(
+                    'We provide dedicated services for analyzing and sharing anonymous learning analytics and data. This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.',
+                  )}
+                </p>
+              </div>
+              <Art>
+                <Img fluid={data.tell_story.childImageSharp.fluid} />
+              </Art>
             </Grid>
           </Container>
         </Section>
