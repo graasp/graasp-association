@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
+import { useTranslation } from 'react-i18next';
+
 import { Section, Container } from '@components/global';
 
 const TEAM = [
@@ -14,81 +16,100 @@ const TEAM = [
   {
     name: 'Isabelle Vonèche Cardia',
     image: 'isabelle.jpg',
-    role: 'Vice President',
+    role: 'VP Communication',
   },
   {
     name: 'María Jesús Rodríguez-Triana',
-    image: 'rose.jpg',
-    role: 'Vice President',
+    image: 'maria.jpg',
+    role: 'VP Education',
   },
   {
     name: 'Juan Carlos Farah',
     image: 'juancarlos.jpg',
-    role: 'Software Engineer',
+    role: 'VP Research',
   },
   {
     name: 'André Nogueira',
-    image: 'ashlyn.jpg',
-    role: 'Software Engineer',
+    image: 'andre.jpg',
+    role: 'VP Engineering',
+  },
+  {
+    name: 'Joana Machado',
+    image: 'joana.jpg',
+    role: 'Research Collaborator',
   },
   {
     name: 'Kim Lan Phan Hoang',
-    image: 'martin.jpg',
-    role: 'Software Engineer',
+    image: 'kim.jpg',
+    role: 'Software Engineer ',
   },
   {
     name: 'Hagop Taminian',
-    image: 'lisa.jpg',
+    image: 'hagop.jpg',
     role: 'Software Engineer',
+  },
+  {
+    name: 'Hassan Abdul Ghaffar',
+    image: 'hassan.png',
+    role: 'Software Engineer',
+  },
+  {
+    name: 'Sola Olateju',
+    image: 'sola.jpeg',
+    role: 'Community Manager',
   },
 ];
 
-const Team = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allFile(filter: { sourceInstanceName: { eq: "team" } }) {
-          edges {
-            node {
-              relativePath
-              childImageSharp {
-                fluid(maxWidth: 400, maxHeight: 400) {
-                  ...GatsbyImageSharpFluid
+const Team = () => {
+  const { t } = useTranslation();
+
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          allFile(filter: { sourceInstanceName: { eq: "team" } }) {
+            edges {
+              node {
+                relativePath
+                childImageSharp {
+                  fluid(maxWidth: 400, maxHeight: 400) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
             }
           }
         }
-      }
-    `}
-    render={data => (
-      <Section id="team" accent="secondary">
-        <Container style={{ position: 'relative' }}>
-          <h1>The Team</h1>
-          <TeamGrid>
-            {TEAM.map(({ name, image, role }) => {
-              const img = data.allFile.edges.find(
-                ({ node }) => node.relativePath === image,
-              ).node;
+      `}
+      render={data => (
+        <Section id="team" accent="secondary">
+          <Container style={{ position: 'relative' }}>
+            <h1>{t('The Team')}</h1>
+            <TeamGrid>
+              {TEAM.map(({ name, image, role }) => {
+                const img = data.allFile.edges.find(
+                  ({ node }) => node.relativePath === image,
+                ).node;
 
-              return (
-                <div key={name}>
-                  <Img
-                    fluid={img.childImageSharp.fluid}
-                    alt={name}
-                    style={{ borderRadius: '50%' }}
-                  />
-                  <Title>{name}</Title>
-                  <Subtitle>{role}</Subtitle>
-                </div>
-              );
-            })}
-          </TeamGrid>
-        </Container>
-      </Section>
-    )}
-  />
-);
+                return (
+                  <div key={name}>
+                    <Img
+                      fluid={img.childImageSharp.fluid}
+                      alt={name}
+                      style={{ borderRadius: '50%' }}
+                    />
+                    <Title>{name}</Title>
+                    <Subtitle>{t(role)}</Subtitle>
+                  </div>
+                );
+              })}
+            </TeamGrid>
+          </Container>
+        </Section>
+      )}
+    />
+  );
+};
 
 const TeamGrid = styled.div`
   display: grid;

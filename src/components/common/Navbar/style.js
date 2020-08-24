@@ -10,6 +10,7 @@ export const Nav = styled.nav`
   width: 100%;
   top: 0;
   z-index: 1000;
+  display: flex;
 `;
 
 export const StyledContainer = styled(Container)`
@@ -73,13 +74,13 @@ export const Mobile = styled.div`
   display: none;
 
   @media (max-width: ${props => props.theme.screen.md}) {
-    display: block;
+    display: flex;
   }
 
   ${props =>
     props.hide &&
     `
-    display: block;
+    display: flex;
 
     @media (max-width: ${props.theme.screen.md}) {
       display: none;

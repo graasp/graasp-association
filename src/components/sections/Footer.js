@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { Section, Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
+import { useTranslation } from 'react-i18next';
+
 import { ReactComponent as EcLogo } from '@images/sponsors/ec.svg';
 import { ReactComponent as EpflLogo } from '@images/sponsors/epfl.svg';
 import { ReactComponent as SwissUniLogo } from '@images/sponsors/swissuniversities.svg';
@@ -44,49 +46,53 @@ const SOCIAL = [
   },
 ];
 
-const Footer = () => (
-  <>
-    <Section accent="secondary" style={{ paddingTop: 48, paddingBottom: 48 }}>
-      <StyledLogoContainer>
-        <div>
-          <h3 style={{ textAlign: 'center' }}>
-            The Graasp Association is supported by
-          </h3>
-          <LogoGrid>
-            {LOGOS.map(({ logo, link }) => (
-              <ExternalLink
-                key={link}
-                href={link}
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                {logo()}
+const Footer = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <Section accent="secondary" style={{ paddingTop: 48, paddingBottom: 48 }}>
+        <StyledLogoContainer>
+          <div>
+            <h3 style={{ textAlign: 'center' }}>
+              {t('The Graasp Association is supported by')}
+            </h3>
+            <LogoGrid>
+              {LOGOS.map(({ logo, link }) => (
+                <ExternalLink
+                  key={link}
+                  href={link}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  {logo()}
+                </ExternalLink>
+              ))}
+            </LogoGrid>
+          </div>
+        </StyledLogoContainer>
+      </Section>
+      <Art>
+        <GraaspLogoDark style={{ marginBottom: 30 }} />
+      </Art>
+      <FooterWrapper>
+        <StyledContainer>
+          <Copyright>{t('© Graasp Association 2020')}</Copyright>
+          <SocialIcons>
+            {SOCIAL.map(({ icon, link }) => (
+              <ExternalLink key={link} href={link}>
+                <img src={icon} alt="link" />
               </ExternalLink>
             ))}
-          </LogoGrid>
-        </div>
-      </StyledLogoContainer>
-    </Section>
-    <Art>
-      <GraaspLogoDark style={{ marginBottom: 30 }} />
-    </Art>
-    <FooterWrapper>
-      <StyledContainer>
-        <Copyright>© Graasp Association 2020</Copyright>
-        <SocialIcons>
-          {SOCIAL.map(({ icon, link }) => (
-            <ExternalLink key={link} href={link}>
-              <img src={icon} alt="link" />
-            </ExternalLink>
-          ))}
-        </SocialIcons>
-      </StyledContainer>
-    </FooterWrapper>
-  </>
-);
+          </SocialIcons>
+        </StyledContainer>
+      </FooterWrapper>
+    </>
+  );
+};
 
 const LogoGrid = styled.div`
   display: grid;

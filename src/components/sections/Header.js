@@ -3,23 +3,30 @@ import styled from 'styled-components';
 
 import { Container } from '@components/global';
 
+import { useTranslation } from 'react-i18next';
+
 import { ReactComponent as GraaspLogo } from '@images/art/hand.svg';
 
-const Header = () => (
-  <HeaderWrapper>
-    <Container>
-      <Grid>
-        <Art>{GraaspLogo()}</Art>
-        <Text>
-          <h1>
-            Graasp is a Non-Profit Organization Promoting Innovation in Digital
-            Education
-          </h1>
-        </Text>
-      </Grid>
-    </Container>
-  </HeaderWrapper>
-);
+const Header = () => {
+  const { t } = useTranslation();
+
+  return (
+    <HeaderWrapper>
+      <Container>
+        <Grid>
+          <Art>{GraaspLogo()}</Art>
+          <Text>
+            <h1>
+              {t(
+                'Graasp is a Non-Profit Organization Promoting Digital Education',
+              )}
+            </h1>
+          </Text>
+        </Grid>
+      </Container>
+    </HeaderWrapper>
+  );
+};
 
 const HeaderWrapper = styled.header`
   background-color: ${props => props.theme.color.primary};
