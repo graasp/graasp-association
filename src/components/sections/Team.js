@@ -20,7 +20,7 @@ const TEAM = [
   },
   {
     name: 'María Jesús Rodríguez-Triana',
-    image: 'maria.jpeg',
+    image: 'maria.jpg',
     role: 'VP Education',
   },
   {
@@ -30,7 +30,7 @@ const TEAM = [
   },
   {
     name: 'André Nogueira',
-    image: 'andre.jpeg',
+    image: 'andre.jpg',
     role: 'VP Engineering',
   },
   {
@@ -46,6 +46,11 @@ const TEAM = [
   {
     name: 'Hagop Taminian',
     image: 'hagop.jpg',
+    role: 'Software Engineer',
+  },
+  {
+    name: 'Hassan Abdul Ghaffar',
+    image: 'hassan.png',
     role: 'Software Engineer',
   },
   {
