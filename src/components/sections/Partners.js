@@ -14,6 +14,7 @@ import { ReactComponent as ColliderLogo } from '@images/logos/collider.svg';
 import { ReactComponent as EpflInnovationLogo } from '@images/logos/epfl-innovation.svg';
 import { ReactComponent as TremplinLogo } from '@images/logos/tremplin.svg';
 import { ReactComponent as UnineLogo } from '@images/logos/unine.svg';
+import { ReactComponent as GogaLogo } from '@images/logos/goga.svg';
 
 const LOGOS = [
   {
@@ -43,6 +44,10 @@ const LOGOS = [
   {
     logo: TremplinLogo,
     link: 'https://tremplin.ens-lyon.fr',
+  },
+  {
+    logo: GogaLogo,
+    link: 'https://go-ga.org',
   },
 ];
 
