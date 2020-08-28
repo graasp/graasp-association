@@ -1,37 +1,32 @@
-# gatsby-absurd
+# Graasp Association
 
-An absurd Gatsby starter. The collection of illustrations, [absurd.design](https://absurd.design/) by [Diana Valeanu](https://twitter.com/diana_valeanu) is a very fascinating and beautiful project with some pretty thoughtful concepts. Experimentation on how that could be put together on a site ended up as this starter.
+The Graasp Association's [website](https://graasp.org), built with GatsbyJS starting with the [gatsby-absurd](https://www.gatsbyjs.com/starters/ajayns/gatsby-absurd) template. The website contains:
 
-![screenshot](https://user-images.githubusercontent.com/20743219/85018804-64ec4e00-b18b-11ea-9aa0-d4be033efff8.png)
+- An overview of the Graasp Association's work
+- Logos of a selection of the Association's partners/users
+- Photos of the Association's team members
+- FAQs
 
-[Live Demo](https://gatsby-absurd.vercel.app/)
+![screenshot](https://user-images.githubusercontent.com/19311953/91440662-995d4400-e877-11ea-82d8-da6abc27fa91.png)
 
-## Installation
+## Getting Started
 
-Install the dependencies:
+To edit and view the website in your local environment, follow the instructions below.
 
-### `yarn install`
+### Prerequisites
 
-Run the development server:
+Make sure you have GatsbyJS installed. If you don't, click [here](https://www.gatsbyjs.org/docs/preparing-your-environment/) for installation instructions.
 
-### `yarn dev`
+### Installation
 
-Production build to `/public`:
+1. After cloning the repository, run `yarn install`
+2. Run `yarn start` to launch the project on a live local server; by default, the project will launch on [http://localhost:8000](#)
+3. Edit the source code! The main sections of the site are placed in `src/sections`. When you finish editing, save your changes, and Gatsby will automatically reload [http://localhost:8000](#) to reflect them
 
-### `yarn build`
+### Deployment
 
-Cleanup cache (often fixes misc errors when run before `yarn dev`):
+When you are ready to show the site to the world:
 
-### `yarn clean`
-
-## Content
-
-Each of the sections in the site are placed in `src/sections`. Data is usually separated out into objects/arrays to be rendered in the component.
-
-## SEO
-
-The component `src/components/common/SEO.js` handles all meta data and SEO content, modify the `SEO_DATA` variable to add the data automatically. For application manifest data and favicon, modify the `gatsby-plugin-manifest` configuration in `gatsby-config.js`.
-
-## Styling
-
-This project uses [styled-components]() to handle styling: `src/styles/theme.js` defines the styling base and `src/styles/GlobalStyles.js` includes basic element styles along with the CSS Reset.
+1. Run `yarn build`
+2. Deploy the website to the development environment by running `./scripts/deploy.sh -e .env.dev`; you can view this deployment on https://dev.graasp.org
+3. Deploy the website to production by running `./scripts/deploy.sh -e .env.prod`
