@@ -58,6 +58,9 @@ const en = {
     About: 'About',
     Partners: 'Partners',
     Team: 'Team',
+    Accept: 'Accept',
+    'We use cookies and other tracking technologies to improve your browsing experience on our website, to analyze our website traffic, and to understand where our visitors are coming from. By browsing our website, you consent to our use of cookies and other tracking technologies.':
+      'We use cookies and other tracking technologies to improve your browsing experience on our website, to analyze our website traffic, and to understand where our visitors are coming from. By browsing our website, you consent to our use of cookies and other tracking technologies.',
   },
 };
 
