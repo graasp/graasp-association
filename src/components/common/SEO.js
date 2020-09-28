@@ -8,7 +8,8 @@ const SEO_DATA = {
   url: '',
   author: 'Graasp',
   keywords: ['Graasp', 'Graasp Association', 'digital education', 'EPFL'],
-  img: '',
+  img:
+    'https://images.unsplash.com/photo-1504860708171-19abd233ec3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
   twitterId: '',
   facebookId: '',
 };
