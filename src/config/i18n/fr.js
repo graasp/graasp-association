@@ -58,6 +58,9 @@ const fr = {
     About: 'À propos',
     Partners: 'Partenaires',
     Team: 'Équipe',
+    Accept: "J'accepte",
+    'We use cookies and other tracking technologies to improve your browsing experience on our website, to analyze our website traffic, and to understand where our visitors are coming from. By browsing our website, you consent to our use of cookies and other tracking technologies.':
+      "Nous utilisons des cookies et d'autres technologies de suivi pour améliorer votre expérience de navigation sur notre site Web, pour analyser le trafic de notre site Web et pour comprendre d'où viennent nos visiteurs. En naviguant sur notre site Web, vous consentez à notre utilisation des cookies et autres technologies de suivi.",
   },
 };
 

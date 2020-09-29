@@ -1,5 +1,11 @@
 const path = require('path');
 
+const env = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';
+
+require('dotenv').config({
+  path: `.env.${env}`,
+});
+
 module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -70,6 +76,15 @@ module.exports = {
             variants: [`400`, `700`],
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: process.env.GA_TRACKING_ID,
+          anonymize: true,
+        },
       },
     },
   ],
