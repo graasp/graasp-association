@@ -1,6 +1,7 @@
 import React from 'react';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
+import ReactGA from 'react-ga';
 import { ThemeProvider } from 'styled-components';
 import CookieConsent from 'react-cookie-consent';
 
@@ -25,6 +26,10 @@ const Layout = ({ children }) => {
             buttonText={t('Accept')}
             cookieName="gatsby-gdpr-google-analytics"
             buttonStyle={{ background: '#fafafa', fontSize: '13px' }}
+            onAccept={() => {
+              ReactGA.initialize(process.env.GATSBY_GA_TRACKING_ID);
+              ReactGA.pageview('/');
+            }}
             sameSite="lax"
           >
             {t(
