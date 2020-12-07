@@ -54,9 +54,9 @@ const TEAM = [
     role: 'Software Engineer',
   },
   {
-    name: 'Sola Olateju',
-    image: 'sola.jpeg',
-    role: 'Community Manager',
+    name: 'Pedro Torres Da Cunha',
+    image: 'pedro.jpg',
+    role: 'Software Engineer',
   },
 ];
 
