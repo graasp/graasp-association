@@ -25,7 +25,11 @@ const Faq = () => {
           <FaqItem title={t('What are Graasp’s platforms?')}>
             <Trans>
               The Graasp Association&apos;s flagship product is{' '}
-              <a href="https://graasp.eu" target="_blank" rel="noreferrer">
+              <a
+                href="https://graasp.eu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Graasp.eu
               </a>
               , a digital education platform accessible on web, mobile, and
@@ -35,7 +39,11 @@ const Faq = () => {
           </FaqItem>
           <FaqItem title={t('What is Graasp.eu?')}>
             <Trans>
-              <a href="https://graasp.eu" target="_blank" rel="noreferrer">
+              <a
+                href="https://graasp.eu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Graasp.eu
               </a>{' '}
               is a platform on which you can create your own digital educational
@@ -51,7 +59,7 @@ const Faq = () => {
               <a
                 href="https://graasp.eu/signup"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 here
               </a>
@@ -61,7 +69,11 @@ const Faq = () => {
           <FaqItem title={t('How much does it cost?')}>
             <Trans>
               You can get started on{' '}
-              <a href="https://graasp.eu" target="_blank" rel="noreferrer">
+              <a
+                href="https://graasp.eu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Graasp.eu
               </a>{' '}
               for free! Access to premium features—such as learning analytics

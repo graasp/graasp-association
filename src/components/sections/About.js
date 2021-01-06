@@ -101,17 +101,23 @@ const About = () => {
                 <p>
                   <Trans>
                     Built with accessibility in mind, Graasp&apos;s solutions
-                    are available on web, mobile, and desktop devices, both
-                    online and offline. You can choose between our cloud
-                    infrastructure (
+                    are available on the cloud (
                     <a
                       href="https://graasp.eu"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                     >
-                      Graasp.eu
+                      graasp.eu
                     </a>
-                    ) or on-premise hosting (coming soon!).
+                    ), on mobile (coming soon), and on desktop devices (
+                    <a
+                      href="https://desktop.graasp.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      desktop.graasp.org
+                    </a>
+                    ), both online and offline.
                   </Trans>
                 </p>
               </div>
@@ -150,9 +156,21 @@ const About = () => {
                   )}
                 </h2>
                 <p>
-                  {t(
-                    'We provide dedicated services for analyzing and sharing anonymous learning analytics and data. This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.',
-                  )}
+                  <Trans>
+                    We provide dedicated services for analyzing and sharing
+                    anonymous learning analytics and data (
+                    <a
+                      href="https://insights.graasp.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      insights.graasp.org
+                    </a>
+                    ). This enables the research community and public
+                    institutions to conduct evidence-based assessments of
+                    innovative pedagogical scenarios and technological
+                    solutions.
+                  </Trans>
                 </p>
               </div>
               <Art>

@@ -8,8 +8,8 @@ const en = {
       'Using our authoring tools, you can create custom digital activities that fit your needs with a few clicks. These activities can be kept private, or shared with your colleagues.',
     'Our solutions are adaptable to your educational needs':
       'Our solutions are adaptable to your educational needs',
-    "Built with accessibility in mind, Graasp's solutions are available on web, mobile, and desktop devices, both online and offline. You can choose between our cloud infrastructure (<1>Graasp.eu</1>) or on-premise hosting (coming soon!).":
-      "Built with accessibility in mind, Graasp's solutions are available on web, mobile, and desktop devices, both online and offline. You can choose between our cloud infrastructure (<1>Graasp.eu</1>) or on-premise hosting (coming soon!).",
+    "Built with accessibility in mind, Graasp's solutions are available on the cloud (<1>graasp.eu</1>), on mobile (coming soon), and on desktop devices (<3>desktop.graasp.org</3>), both online and offline.":
+      "Built with accessibility in mind, Graasp's solutions are available on the cloud (<1>graasp.eu</1>), on mobile (coming soon), and on desktop devices (<3>desktop.graasp.org</3>), both online and offline.",
     'We support you every step of the way':
       'We support you every step of the way',
     "Whether you're just getting started with digital education or are an experienced user, we provide support and training to help you achieve your educational objectives.":
@@ -20,8 +20,8 @@ const en = {
       'If your teaching needs require custom digital experiences, our community of developers and educators are here to help.',
     'We enable open translational research in digital education':
       'We enable open translational research in digital education',
-    'We provide dedicated services for analyzing and sharing anonymous learning analytics and data. This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.':
-      'We provide dedicated services for analyzing and sharing anonymous learning analytics and data. This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.',
+    'We provide dedicated services for analyzing and sharing anonymous learning analytics and data (<1>insights.graasp.org</1>). This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.':
+      'We provide dedicated services for analyzing and sharing anonymous learning analytics and data (<1>insights.graasp.org</1>). This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.',
     'Our solutions are used around the world':
       'Our solutions are used around the world',
     'The Team': 'The Team',
@@ -34,6 +34,7 @@ const en = {
     'Software Engineer ': 'Software Engineer ',
     'Software Engineer': 'Software Engineer',
     'Community Manager': 'Community Manager',
+    'Graasp Ambassador': 'Graasp Ambassador',
     'Frequently Asked Questions': 'Frequently Asked Questions',
     'What are Graasp’s platforms?': 'What are Graasp’s platforms?',
     "The Graasp Association's flagship product is <2>Graasp.eu</2>, a digital education platform accessible on web, mobile, and desktop devices, prepackaged with a suite of integrated learning applications.":

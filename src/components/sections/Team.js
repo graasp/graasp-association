@@ -58,6 +58,11 @@ const TEAM = [
     image: 'pedro.jpg',
     role: 'Software Engineer',
   },
+  {
+    name: 'Philippe Kobel',
+    image: 'philippe.jpg',
+    role: 'Graasp Ambassador',
+  },
 ];
 
 const Team = () => {

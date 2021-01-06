@@ -8,8 +8,8 @@ const fr = {
       "Grâce à nos outils de conception, vous pouvez créer et personnaliser en quelques clics des ressources numériques interactives pour vos activités d'apprentissage mixte (en ligne ou présentiel). Ces ressources peuvent rester privées ou être partagées avec des collègues.",
     'Our solutions are adaptable to your educational needs':
       'Nos solutions s’adaptent à vos besoins éducatifs',
-    "Built with accessibility in mind, Graasp's solutions are available on web, mobile, and desktop devices, both online and offline. You can choose between our cloud infrastructure (<1>Graasp.eu</1>) or on-premise hosting (coming soon!).":
-      "Conçues pour être accessibles, les solutions de Graasp sont disponibles sur le Web, les appareils mobiles et les ordinateurs de bureau, en ligne et hors ligne. Vous pouvez soit choisir notre infrastructure du cloud (<1>Graasp.eu</1>) soit l'hébergement sur site (en préparation).",
+    "Built with accessibility in mind, Graasp's solutions are available on the cloud (<1>graasp.eu</1>), on mobile (coming soon), and on desktop devices (<3>desktop.graasp.org</3>), both online and offline.":
+      'Conçues pour être accessibles, les solutions de Graasp sont disponibles sur le Web (<1>graasp.eu</1>), les appareils mobiles (en préparation) et les ordinateurs de bureau (<3>desktop.graasp.org</3>), en ligne et hors ligne.',
     'We support you every step of the way':
       'Nous vous accompagnons à chaque étape de votre parcours',
     "Whether you're just getting started with digital education or are an experienced user, we provide support and training to help you achieve your educational objectives.":
@@ -20,8 +20,8 @@ const fr = {
       'Si vous avez des besoins numériques particuliers pour votre enseignement, notre communauté d’expert-e-s pédagogiques et techniques est là pour vous aider.',
     'We enable open translational research in digital education':
       'Nous facilitons la recherche translationnelle ouverte en éducation numérique',
-    'We provide dedicated services for analyzing and sharing anonymous learning analytics and data. This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.':
-      'Grâce à nos services d’analyse et de partage de données d’apprentissage anonymisées nous aidons la communauté scientifique et les pouvoirs publics à évaluer de manière factuelle les bénéfices des innovations pédagogiques et techniques.',
+    'We provide dedicated services for analyzing and sharing anonymous learning analytics and data (<1>insights.graasp.org</1>). This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.':
+      'Grâce à nos services d’analyse et de partage de données d’apprentissage anonymisées (<1>insights.graasp.org</1>) nous aidons la communauté scientifique et les pouvoirs publics à évaluer de manière factuelle les bénéfices des innovations pédagogiques et techniques.',
     'Our solutions are used around the world':
       'Nos solutions sont utilisées dans le monde entier',
     'The Team': "L'équipe",
@@ -34,6 +34,7 @@ const fr = {
     'Software Engineer ': 'Ingénieure logiciel',
     'Software Engineer': 'Ingénieur logiciel',
     'Community Manager': 'Animateur de communauté',
+    'Graasp Ambassador': 'Ambassadeur de Graasp',
     'Frequently Asked Questions': 'Foire aux questions',
     'What are Graasp’s platforms?': 'Quelles sont les plates-formes de Graasp?',
     "The Graasp Association's flagship product is <2>Graasp.eu</2>, a digital education platform accessible on web, mobile, and desktop devices, prepackaged with a suite of integrated learning applications.":
