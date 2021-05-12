@@ -54,8 +54,13 @@ const TEAM = [
     role: 'Software Engineer',
   },
   {
-    name: 'Pedro Torres Da Cunha',
-    image: 'pedro.jpg',
+    name: 'Hadi Khairallah',
+    image: 'hadi.jpeg',
+    role: 'Software Engineer',
+  },
+  {
+    name: 'Abdallah Al Chami',
+    image: 'abdallah.jpeg',
     role: 'Software Engineer',
   },
   {
