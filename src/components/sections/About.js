@@ -157,14 +157,22 @@ const About = () => {
                 </h2>
                 <p>
                   <Trans>
-                    We provide dedicated services for analyzing and sharing
-                    anonymous learning analytics and data (
+                    We provide a desktop application for anonymizing and
+                    analyzing learning analytics and data (
                     <a
                       href="https://insights.graasp.org"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       insights.graasp.org
+                    </a>
+                    ), and a repository to share collections of open datasets (
+                    <a
+                      href="https://explore.graasp.eu"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      explore.graasp.eu
                     </a>
                     ). This enables the research community and public
                     institutions to conduct evidence-based assessments of
