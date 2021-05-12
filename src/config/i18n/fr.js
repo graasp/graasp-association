@@ -20,8 +20,8 @@ const fr = {
       'Si vous avez des besoins numériques particuliers pour votre enseignement, notre communauté d’expert-e-s pédagogiques et techniques est là pour vous aider.',
     'We enable open translational research in digital education':
       'Nous facilitons la recherche translationnelle ouverte en éducation numérique',
-    'We provide dedicated services for analyzing and sharing anonymous learning analytics and data (<1>insights.graasp.org</1>). This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.':
-      'Grâce à nos services d’analyse et de partage de données d’apprentissage anonymisées (<1>insights.graasp.org</1>) nous aidons la communauté scientifique et les pouvoirs publics à évaluer de manière factuelle les bénéfices des innovations pédagogiques et techniques.',
+    'We provide a desktop application for anonymizing and analyzing learning analytics and data (<1>insights.graasp.org</1>), and a repository to share collections of open datasets (<3>explore.graasp.eu</3>). This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.':
+      "Grâce à notre application d’anonymisation et d’analyse de données d’apprentissage (<1>insights.graasp.org</1>), ainsi qu'à notre bibliothèque de partage de ressources éducatives libres et de données de recherche (<3>explore.graasp.eu</3>), nous aidons la communauté scientifique et les pouvoirs publics à évaluer de manière factuelle les bénéfices des innovations pédagogiques et techniques.",
     'Our solutions are used around the world':
       'Nos solutions sont utilisées dans le monde entier',
     'The Team': "L'équipe",

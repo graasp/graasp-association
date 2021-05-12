@@ -20,8 +20,8 @@ const en = {
       'If your teaching needs require custom digital experiences, our community of developers and educators are here to help.',
     'We enable open translational research in digital education':
       'We enable open translational research in digital education',
-    'We provide dedicated services for analyzing and sharing anonymous learning analytics and data (<1>insights.graasp.org</1>). This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.':
-      'We provide dedicated services for analyzing and sharing anonymous learning analytics and data (<1>insights.graasp.org</1>). This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.',
+    'We provide a desktop application for anonymizing and analyzing learning analytics and data (<1>insights.graasp.org</1>), and a repository to share collections of open datasets (<3>explore.graasp.eu</3>). This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.':
+      'We provide a desktop application for anonymizing and analyzing learning analytics and data (<1>insights.graasp.org</1>), and a repository to share collections of open datasets (<3>explore.graasp.eu</3>). This enables the research community and public institutions to conduct evidence-based assessments of innovative pedagogical scenarios and technological solutions.',
     'Our solutions are used around the world':
       'Our solutions are used around the world',
     'The Team': 'The Team',
