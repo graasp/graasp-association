@@ -64,6 +64,11 @@ const TEAM = [
     role: 'Software Engineer',
   },
   {
+    name: 'Julien Torrent',
+    image: 'julien.jpg',
+    role: 'Software Engineer',
+  },
+  {
     name: 'Philippe Kobel',
     image: 'philippe.jpg',
     role: 'Graasp Ambassador',
