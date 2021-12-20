@@ -72,3 +72,6 @@ yarn-error.log
 
 # production
 /build
+
+# jetbrains
+/.idea
