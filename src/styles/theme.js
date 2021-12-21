@@ -1,7 +1,7 @@
 const theme = {
   font: {
-    primary: `'Lato', 'Helvetica', sans-serif`,
-    secondary: `'Lato', 'Helvetica', sans-serif`,
+    primary: `'Helvetica', sans-serif`,
+    secondary: `'Helvetica', sans-serif`,
   },
   font_size: {
     smallest: 'font-size: 14px; line-height: 20px',
