@@ -29,23 +29,66 @@ const TEAM = [
     role: 'VP Research',
   },
   {
-    name: 'André Nogueira',
-    image: 'andre.jpg',
+    name: 'Kim Lan Phan Hoang',
+    image: 'kim.jpg',
     role: 'VP Engineering',
   },
   {
-    name: 'Joana Machado',
-    image: 'joana.jpg',
-    role: 'Research Collaborator',
+    name: 'Jérémy La Scala',
+    image: 'logo.png',
+    role: 'Software Engineer',
   },
   {
-    name: 'Kim Lan Phan Hoang',
-    image: 'kim.jpg',
-    role: 'Software Engineer ',
+    name: 'Alexandre Chau',
+    image: 'logo.png',
+    role: 'Software Engineer',
+  },
+  {
+    name: 'Basile Spaenlehauer',
+    image: 'logo.png',
+    role: 'Software Engineer',
+  },
+  {
+    name: 'Víctor González González',
+    image: 'logo.png',
+    role: 'Software Engineer',
+  },
+  {
+    name: 'Álvaro Bautista',
+    image: 'logo.png',
+    role: 'Software Engineer',
+  },
+  {
+    name: 'Graciana Aad',
+    image: 'logo.png',
+    role: 'Software Engineer',
+  },
+  {
+    name: 'Julien Torrent',
+    image: 'julien.jpg',
+    role: 'Software Engineer',
+  },
+  {
+    name: 'Philippe Kobel',
+    image: 'philippe.jpg',
+    role: 'Ambassador',
+  },
+];
+
+const COLLABORATORS = [
+  {
+    name: 'André Nogueira',
+    image: 'andre.jpg',
+    role: 'Software Engineer',
   },
   {
     name: 'Hagop Taminian',
     image: 'hagop.jpg',
+    role: 'Software Engineer',
+  },
+  {
+    name: 'Shenyi Wang',
+    image: 'logo.png',
     role: 'Software Engineer',
   },
   {
@@ -64,16 +107,11 @@ const TEAM = [
     role: 'Software Engineer',
   },
   {
-    name: 'Julien Torrent',
-    image: 'julien.jpg',
-    role: 'Software Engineer',
+    name: 'Joana Machado',
+    image: 'joana.jpg',
+    role: 'Researcher',
   },
-  {
-    name: 'Philippe Kobel',
-    image: 'philippe.jpg',
-    role: 'Graasp Ambassador',
-  },
-];
+]
 
 const Team = () => {
   const { t } = useTranslation();
@@ -100,16 +138,37 @@ const Team = () => {
         <Section id="team" accent="secondary">
           <Container style={{ position: 'relative' }}>
             <h1>{t('The Team')}</h1>
+            <p>{t('Core')}</p>
             <TeamGrid>
               {TEAM.map(({ name, image, role }) => {
                 const img = data.allFile.edges.find(
                   ({ node }) => node.relativePath === image,
-                ).node;
+                )?.node;
 
                 return (
                   <div key={name}>
                     <Img
-                      fluid={img.childImageSharp.fluid}
+                      fluid={img?.childImageSharp.fluid}
+                      alt={name}
+                      style={{ borderRadius: '50%' }}
+                    />
+                    <Title>{name}</Title>
+                    <Subtitle>{t(role)}</Subtitle>
+                  </div>
+                );
+              })}
+            </TeamGrid>
+            <p style={{ marginTop: '5rem' }}>{t('Collaborators')}</p>
+            <TeamGrid>
+              {COLLABORATORS.map(({ name, image, role }) => {
+                const img = data.allFile.edges.find(
+                  ({ node }) => node.relativePath === image,
+                )?.node;
+
+                return (
+                  <div key={name}>
+                    <Img
+                      fluid={img?.childImageSharp.fluid}
                       alt={name}
                       style={{ borderRadius: '50%' }}
                     />
