@@ -26,25 +26,25 @@ const Faq = () => {
             <Trans>
               The Graasp Association&apos;s flagship product is{' '}
               <a
-                href="https://graasp.eu"
+                href="https://graasp.org"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Graasp.eu
+                Graasp
               </a>
               , a digital education platform accessible on web, mobile, and
               desktop devices, prepackaged with a suite of integrated learning
               applications.
             </Trans>
           </FaqItem>
-          <FaqItem title={t('What is Graasp.eu?')}>
+          <FaqItem title={t('What is Graasp?')}>
             <Trans>
               <a
-                href="https://graasp.eu"
+                href="https://graasp.org"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Graasp.eu
+                Graasp
               </a>{' '}
               is a platform on which you can create your own digital educational
               activities and resources. To get you started, Graasp provides
@@ -57,7 +57,7 @@ const Faq = () => {
             <Trans>
               You can try our platforms for free by signing up{' '}
               <a
-                href="https://graasp.eu/signup"
+                href="https://auth.graasp.org/signup"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -70,11 +70,11 @@ const Faq = () => {
             <Trans>
               You can get started on{' '}
               <a
-                href="https://graasp.eu"
+                href="https://graasp.org"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Graasp.eu
+                Graasp
               </a>{' '}
               for free! Access to premium features—such as learning analytics
               and personalized learning spaces—starts at 5 CHF per registered

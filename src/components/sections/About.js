@@ -103,11 +103,11 @@ const About = () => {
                     Built with accessibility in mind, Graasp&apos;s solutions
                     are available on the cloud (
                     <a
-                      href="https://graasp.eu"
+                      href="https://graasp.org"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      graasp.eu
+                      Graasp
                     </a>
                     ), on mobile (coming soon), and on desktop devices (
                     <a
@@ -115,7 +115,7 @@ const About = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      desktop.graasp.org
+                      Graasp Desktop
                     </a>
                     ), both online and offline.
                   </Trans>
@@ -164,15 +164,15 @@ const About = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      insights.graasp.org
+                      Graasp Insights
                     </a>
                     ), and a repository to share collections of open datasets (
                     <a
-                      href="https://explore.graasp.eu"
+                      href="https://explorer.graasp.org"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      explore.graasp.eu
+                      Graasp Explorer
                     </a>
                     ). This enables the research community and public
                     institutions to conduct evidence-based assessments of
