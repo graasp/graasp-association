@@ -40,7 +40,7 @@ const TEAM = [
   },
   {
     name: 'Alexandre Chau',
-    image: 'logo.png',
+    image: 'alexandre.jpg',
     role: 'Software Engineer',
   },
   {
