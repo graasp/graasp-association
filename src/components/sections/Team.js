@@ -45,7 +45,7 @@ const TEAM = [
   },
   {
     name: 'Basile Spaenlehauer',
-    image: 'logo.png',
+    image: 'basile.jpg',
     role: 'Software Engineer',
   },
   {
@@ -111,7 +111,7 @@ const COLLABORATORS = [
     image: 'joana.jpg',
     role: 'Researcher',
   },
-]
+];
 
 const Team = () => {
   const { t } = useTranslation();
