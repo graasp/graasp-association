@@ -7,7 +7,7 @@ The Graasp Association's [website](https://graasp.org), built with GatsbyJS star
 - Photos of the Association's team members
 - FAQs
 
-![screenshot](https://user-images.githubusercontent.com/19311953/91440662-995d4400-e877-11ea-82d8-da6abc27fa91.png)
+![Website Screenshot](https://user-images.githubusercontent.com/102170589/168335202-69e9d31d-2241-43f2-90ba-7eb0aa1d5475.png)
 
 ## Getting Started
 
