@@ -92,11 +92,6 @@ const COLLABORATORS = [
     role: 'Software Engineer',
   },
   {
-    name: 'Hassan Abdul Ghaffar',
-    image: 'hassan.png',
-    role: 'Software Engineer',
-  },
-  {
     name: 'Hadi Khairallah',
     image: 'hadi.jpeg',
     role: 'Software Engineer',
