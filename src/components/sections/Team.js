@@ -35,7 +35,7 @@ const TEAM = [
   },
   {
     name: 'Jérémy La Scala',
-    image: 'logo.png',
+    image: 'jeremy.jpg',
     role: 'Software Engineer',
   },
   {
@@ -46,26 +46,6 @@ const TEAM = [
   {
     name: 'Basile Spaenlehauer',
     image: 'basile.jpg',
-    role: 'Software Engineer',
-  },
-  {
-    name: 'Víctor González González',
-    image: 'logo.png',
-    role: 'Software Engineer',
-  },
-  {
-    name: 'Álvaro Bautista',
-    image: 'logo.png',
-    role: 'Software Engineer',
-  },
-  {
-    name: 'Graciana Aad',
-    image: 'logo.png',
-    role: 'Software Engineer',
-  },
-  {
-    name: 'Julien Torrent',
-    image: 'julien.jpg',
     role: 'Software Engineer',
   },
   {
@@ -87,24 +67,14 @@ const COLLABORATORS = [
     role: 'Software Engineer',
   },
   {
-    name: 'Shenyi Wang',
-    image: 'logo.png',
-    role: 'Software Engineer',
-  },
-  {
-    name: 'Hadi Khairallah',
-    image: 'hadi.jpeg',
-    role: 'Software Engineer',
-  },
-  {
-    name: 'Abdallah Al Chami',
-    image: 'abdallah.jpeg',
-    role: 'Software Engineer',
-  },
-  {
     name: 'Joana Machado',
     image: 'joana.jpg',
     role: 'Researcher',
+  },
+  {
+    name: 'Álvaro Bautista',
+    image: 'alvaro.jpeg',
+    role: 'Software Engineer',
   },
 ];
 
