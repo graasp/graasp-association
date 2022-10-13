@@ -16,6 +16,8 @@ import GithubIcon from '@static/icons/github.svg';
 import WebIcon from '@static/icons/web.svg';
 import LinkedInIcon from '@static/icons/linkedin.svg';
 
+const copyright = `© Graasp 2014 - ${new Date().getFullYear()}`;
+
 const LOGOS = [
   {
     logo: EcLogo,
@@ -42,7 +44,7 @@ const SOCIAL = [
   },
   {
     icon: WebIcon,
-    link: 'https://graasp.eu',
+    link: 'https://graasp.org',
   },
 ];
 
@@ -80,7 +82,7 @@ const Footer = () => {
       </Art>
       <FooterWrapper>
         <StyledContainer>
-          <Copyright>{t('© Graasp Association 2020')}</Copyright>
+          <Copyright>{copyright}</Copyright>
           <SocialIcons>
             {SOCIAL.map(({ icon, link }) => (
               <ExternalLink key={link} href={link}>
