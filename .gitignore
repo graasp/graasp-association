@@ -75,3 +75,6 @@ yarn-error.log
 
 # jetbrains
 /.idea
+
+# vim
+*.swp

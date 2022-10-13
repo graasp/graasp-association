@@ -168,11 +168,11 @@ const About = () => {
                     </a>
                     ), and a repository to share collections of open datasets (
                     <a
-                      href="https://explorer.graasp.org"
+                      href="https://library.graasp.org"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Graasp Explorer
+                      Graasp Library
                     </a>
                     ). This enables the research community and public
                     institutions to conduct evidence-based assessments of
