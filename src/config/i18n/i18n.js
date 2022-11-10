@@ -1,17 +1,17 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import en from './en';
-import fr from './fr';
+import en from './en.json';
+import fr from './fr.json';
 
 i18n.use(initReactI18next).init({
   resources: {
-    en,
-    fr,
+    en: { association: en },
+    fr: { association: fr },
   },
   fallbackLng: 'en',
   debug: process.env.NODE_ENV !== 'production',
-  ns: ['translations'],
-  defaultNS: 'translations',
+  ns: ['association'],
+  defaultNS: 'association',
   keySeparator: false,
   interpolation: {
     escapeValue: false,

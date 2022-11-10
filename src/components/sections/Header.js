@@ -6,6 +6,7 @@ import { Container } from '@components/global';
 import { useTranslation } from 'react-i18next';
 
 import { ReactComponent as GraaspLogo } from '@images/art/hand.svg';
+import ASSOCIATION from '../../config/i18n/keys';
 
 const Header = () => {
   const { t } = useTranslation();
@@ -16,11 +17,7 @@ const Header = () => {
         <Grid>
           <Art>{GraaspLogo()}</Art>
           <Text>
-            <h1>
-              {t(
-                'Graasp is a Non-Profit Organization Promoting Digital Education',
-              )}
-            </h1>
+            <h1>{t(ASSOCIATION.BANNER_TEXT)}</h1>
           </Text>
         </Grid>
       </Container>

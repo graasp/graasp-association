@@ -19,8 +19,14 @@ import {
 } from './style';
 import TranslationPair from './TranslationPair';
 import i18n from '../../../config/i18n/i18n';
+import ASSOCIATION from '../../../config/i18n/keys';
 
-const NAV_ITEMS = ['About', 'Partners', 'Team', 'FAQ'];
+const NAV_ITEMS = [
+  ASSOCIATION.NAV_ABOUT,
+  ASSOCIATION.NAV_PARTNERS,
+  ASSOCIATION.NAV_TEAM,
+  ASSOCIATION.NAV_FAQ,
+];
 
 class Navbar extends Component {
   state = {

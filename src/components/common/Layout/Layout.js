@@ -12,6 +12,8 @@ import GlobalStyles from '@styles/GlobalStyles';
 
 import i18n from '../../../config/i18n/i18n';
 
+import ASSOCIATION from '../../../config/i18n/keys';
+
 const Layout = ({ children }) => {
   const { t } = useTranslation();
   return (
@@ -23,7 +25,7 @@ const Layout = ({ children }) => {
           {children}
           <CookieConsent
             location="bottom"
-            buttonText={t('Accept')}
+            buttonText={t(ASSOCIATION.COOKIES_ACCEPT_BUTTON_TEXT)}
             cookieName="gatsby-gdpr-google-analytics"
             buttonStyle={{ background: '#fafafa', fontSize: '13px' }}
             onAccept={() => {
@@ -32,13 +34,7 @@ const Layout = ({ children }) => {
             }}
             sameSite="lax"
           >
-            {t(
-              'We use cookies and other tracking technologies to improve your ' +
-                'browsing experience on our website, to analyze our website traffic, ' +
-                'and to understand where our visitors are coming from. By browsing our ' +
-                'website, you consent to our use of cookies and other tracking ' +
-                'technologies.',
-            )}
+            {t(ASSOCIATION.COOKIES_TEXT)}
           </CookieConsent>
         </>
       </ThemeProvider>

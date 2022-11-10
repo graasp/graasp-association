@@ -15,6 +15,7 @@ import { ReactComponent as GraaspLogoDark } from '@images/art/handDark.svg';
 import GithubIcon from '@static/icons/github.svg';
 import WebIcon from '@static/icons/web.svg';
 import LinkedInIcon from '@static/icons/linkedin.svg';
+import ASSOCIATION from '../../config/i18n/keys';
 
 const copyright = `© Graasp 2014 - ${new Date().getFullYear()}`;
 
@@ -57,7 +58,7 @@ const Footer = () => {
         <StyledLogoContainer>
           <div>
             <h3 style={{ textAlign: 'center' }}>
-              {t('The Graasp Association is supported by')}
+              {t(ASSOCIATION.HEADER_SUPPORTED_BY)}
             </h3>
             <LogoGrid>
               {LOGOS.map(({ logo, link }) => (

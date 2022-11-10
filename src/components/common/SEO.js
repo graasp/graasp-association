@@ -1,20 +1,28 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-
-const SEO_DATA = {
-  description:
-    'The Graasp Association supports innovation in digital education.',
-  title: 'Graasp Association',
-  url: '',
-  author: 'Graasp',
-  keywords: ['Graasp', 'Graasp Association', 'digital education', 'EPFL'],
-  img:
-    'https://images.unsplash.com/photo-1504860708171-19abd233ec3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-  twitterId: '',
-  facebookId: '',
-};
+import { useTranslation } from 'react-i18next';
+import ASSOCIATION from '../../config/i18n/keys';
 
 const SEO = () => {
+  const { t } = useTranslation();
+
+  const SEO_DATA = {
+    description: t(ASSOCIATION.SEO_DESCRIPTION),
+    title: t(ASSOCIATION.SEO_TITLE),
+    url: 'https://association.graasp.org',
+    author: 'Graasp',
+    keywords: [
+      t(ASSOCIATION.SEO_KEYWORD_GRAASP_ASSOCIATION),
+      t(ASSOCIATION.SEO_KEYWORD_DIGITAL_EDUCATION),
+      'Graasp',
+      'EPFL',
+    ],
+    img:
+      'https://images.unsplash.com/photo-1504860708171-19abd233ec3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+    twitterId: 'graasp',
+    facebookId: 'graasp',
+  };
+
   return (
     <Helmet>
       <meta property="fb:app_id" content={SEO_DATA.facebookId} />

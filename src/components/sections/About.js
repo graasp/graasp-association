@@ -7,6 +7,8 @@ import { Section, Container } from '@components/global';
 
 import { useTranslation, Trans } from 'react-i18next';
 
+import ASSOCIATION from '../../config/i18n/keys';
+
 const About = () => {
   const { t } = useTranslation();
 
@@ -75,16 +77,8 @@ const About = () => {
           <Container>
             <Grid>
               <div>
-                <h2>
-                  {t(
-                    'We help institutions and educators create interactive resources for blended learning',
-                  )}
-                </h2>
-                <p>
-                  {t(
-                    'Using our authoring tools, you can create custom digital activities that fit your needs with a few clicks. These activities can be kept private, or shared with your colleagues.',
-                  )}
-                </p>
+                <h2>{t(ASSOCIATION.ABOUT_CREATE_RESOURCES_HEADER)}</h2>
+                <p>{t(ASSOCIATION.ABOUT_CREATE_RESOURCES_TEXT)}</p>
               </div>
               <Art>
                 <Img fluid={data.art_learn.childImageSharp.fluid} />
@@ -95,41 +89,35 @@ const About = () => {
                 <Img fluid={data.art_ideas.childImageSharp.fluid} />
               </Art>
               <div>
-                <h2>
-                  {t('Our solutions are adaptable to your educational needs')}
-                </h2>
+                <h2>{t(ASSOCIATION.ABOUT_ADAPTABLE_HEADER)}</h2>
                 <p>
-                  <Trans>
-                    Built with accessibility in mind, Graasp&apos;s solutions
-                    are available on the cloud (
-                    <a
-                      href="https://graasp.org"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Graasp
-                    </a>
-                    ), on mobile (coming soon), and on desktop devices (
-                    <a
-                      href="https://desktop.graasp.org"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Graasp Desktop
-                    </a>
-                    ), both online and offline.
+                  <Trans
+                    components={[
+                      <a
+                        href="https://graasp.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Graasp
+                      </a>,
+                      <a
+                        href="https://desktop.graasp.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Graasp Desktop
+                      </a>,
+                    ]}
+                  >
+                    {ASSOCIATION.ABOUT_ADAPTABLE_TEXT}
                   </Trans>
                 </p>
               </div>
             </Grid>
             <Grid>
               <div>
-                <h2>{t('We support you every step of the way')}</h2>
-                <p>
-                  {t(
-                    "Whether you're just getting started with digital education or are an experienced user, we provide support and training to help you achieve your educational objectives.",
-                  )}
-                </p>
+                <h2>{t(ASSOCIATION.ABOUT_SUPPORT_HEADER)}</h2>
+                <p>{t(ASSOCIATION.ABOUT_SUPPORT_TEXT)}</p>
               </div>
               <Art>
                 <Img fluid={data.art_fast.childImageSharp.fluid} />
@@ -140,44 +128,33 @@ const About = () => {
                 <Img fluid={data.art_pot.childImageSharp.fluid} />
               </Art>
               <div>
-                <h2>{t('Our community of experts is here for you')}</h2>
-                <p>
-                  {t(
-                    'If your teaching needs require custom digital experiences, our community of developers and educators are here to help.',
-                  )}
-                </p>
+                <h2>{t(ASSOCIATION.ABOUT_COMMUNITY_HEADER)}</h2>
+                <p>{t(ASSOCIATION.ABOUT_COMMUNITY_TEXT)}</p>
               </div>
             </Grid>
             <Grid>
               <div>
-                <h2>
-                  {t(
-                    'We enable open translational research in digital education',
-                  )}
-                </h2>
+                <h2>{t(ASSOCIATION.ABOUT_TRANSLATIONAL_HEADER)}</h2>
                 <p>
-                  <Trans>
-                    We provide a desktop application for anonymizing and
-                    analyzing learning analytics and data (
-                    <a
-                      href="https://insights.graasp.org"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Graasp Insights
-                    </a>
-                    ), and a repository to share collections of open datasets (
-                    <a
-                      href="https://library.graasp.org"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Graasp Library
-                    </a>
-                    ). This enables the research community and public
-                    institutions to conduct evidence-based assessments of
-                    innovative pedagogical scenarios and technological
-                    solutions.
+                  <Trans
+                    components={[
+                      <a
+                        href="https://insights.graasp.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Graasp Insights
+                      </a>,
+                      <a
+                        href="https://library.graasp.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Graasp Library
+                      </a>,
+                    ]}
+                  >
+                    {ASSOCIATION.ABOUT_TRANSLATIONAL_TEXT}
                   </Trans>
                 </p>
               </div>

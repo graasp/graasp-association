@@ -15,6 +15,7 @@ import { ReactComponent as EpflInnovationLogo } from '@images/logos/epfl-innovat
 import { ReactComponent as TremplinLogo } from '@images/logos/tremplin.svg';
 import { ReactComponent as UnineLogo } from '@images/logos/unine.svg';
 import { ReactComponent as GogaLogo } from '@images/logos/goga.svg';
+import ASSOCIATION from '../../config/i18n/keys';
 
 const LOGOS = [
   {
@@ -66,7 +67,7 @@ const UsedBy = () => {
       <StyledContainer>
         <div>
           <h2 style={{ textAlign: 'center' }}>
-            {t('Our solutions are used around the world')}
+            {t(ASSOCIATION.HEADER_PARTNERS)}
           </h2>
           <Carousel
             breakPoints={breakPoints}
