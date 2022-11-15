@@ -8,6 +8,12 @@ import { Section, Container } from '@components/global';
 import { useTranslation, Trans } from 'react-i18next';
 
 import ASSOCIATION from '../../config/i18n/keys';
+import {
+  URL_GRAASP_ORG,
+  URL_GRAASP_DESKTOP,
+  URL_GRAASP_INSIGHTS,
+  URL_GRAASP_LIBRARY,
+} from '../../config/hrefs';
 
 const About = () => {
   const { t } = useTranslation();
@@ -94,14 +100,14 @@ const About = () => {
                   <Trans
                     components={[
                       <a
-                        href="https://graasp.org"
+                        href={URL_GRAASP_ORG}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         Graasp
                       </a>,
                       <a
-                        href="https://desktop.graasp.org"
+                        href={URL_GRAASP_DESKTOP}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -139,14 +145,14 @@ const About = () => {
                   <Trans
                     components={[
                       <a
-                        href="https://insights.graasp.org"
+                        href={URL_GRAASP_INSIGHTS}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         Graasp Insights
                       </a>,
                       <a
-                        href="https://library.graasp.org"
+                        href={URL_GRAASP_LIBRARY}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

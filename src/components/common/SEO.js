@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import ASSOCIATION from '../../config/i18n/keys';
+import { URL_SEO_IMAGE, URL_GRAASP_ASSOCIATION } from '../../config/hrefs';
 
 const SEO = () => {
   const { t } = useTranslation();
@@ -9,7 +10,7 @@ const SEO = () => {
   const SEO_DATA = {
     description: t(ASSOCIATION.SEO_DESCRIPTION),
     title: t(ASSOCIATION.SEO_TITLE),
-    url: 'https://association.graasp.org',
+    url: URL_GRAASP_ASSOCIATION,
     author: 'Graasp',
     keywords: [
       t(ASSOCIATION.SEO_KEYWORD_GRAASP_ASSOCIATION),
@@ -17,8 +18,7 @@ const SEO = () => {
       'Graasp',
       'EPFL',
     ],
-    img:
-      'https://images.unsplash.com/photo-1504860708171-19abd233ec3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+    img: URL_SEO_IMAGE,
     twitterId: 'graasp',
     facebookId: 'graasp',
   };

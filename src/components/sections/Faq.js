@@ -13,6 +13,11 @@ import { useTranslation, Trans } from 'react-i18next';
 import FaqItem from '@common/FaqItem';
 
 import ASSOCIATION from '../../config/i18n/keys';
+import {
+  URL_GRAASP_SIGNUP,
+  URL_GRAASP_ORG,
+  MAILTO_CONTACT_GRAASP,
+} from '../../config/hrefs';
 
 const Faq = () => {
   const { t } = useTranslation();
@@ -28,7 +33,7 @@ const Faq = () => {
             <Trans
               components={[
                 <a
-                  href="https://graasp.org"
+                  href={URL_GRAASP_ORG}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -43,7 +48,7 @@ const Faq = () => {
             <Trans
               components={[
                 <a
-                  href="https://graasp.org"
+                  href={URL_GRAASP_ORG}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -58,7 +63,7 @@ const Faq = () => {
             <Trans
               components={[
                 <a
-                  href="https://auth.graasp.org/signup"
+                  href={URL_GRAASP_SIGNUP}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -73,13 +78,13 @@ const Faq = () => {
             <Trans
               components={[
                 <a
-                  href="https://graasp.org"
+                  href={URL_GRAASP_ORG}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Graasp
                 </a>,
-                <a href="mailto: contact@graasp.org">contact@graasp.org</a>,
+                <a href={MAILTO_CONTACT_GRAASP}>contact@graasp.org</a>,
               ]}
             >
               {ASSOCIATION.ANSWER_COST}
@@ -88,7 +93,7 @@ const Faq = () => {
           <FaqItem title={t(ASSOCIATION.QUESTION_TRAINING)}>
             <Trans
               components={[
-                <a href="mailto: contact@graasp.org">contact@graasp.org</a>,
+                <a href={MAILTO_CONTACT_GRAASP}>contact@graasp.org</a>,
               ]}
             >
               {ASSOCIATION.ANSWER_TRAINING}
