@@ -1,6 +1,7 @@
 const path = require('path');
 
-const env = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';
+const env =
+  process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 require('dotenv').config({
   path: `.env.${env}`,
@@ -64,15 +65,6 @@ module.exports = {
           '@sections': path.resolve(__dirname, 'src/components/sections'),
           '@styles': path.resolve(__dirname, 'src/styles/'),
           '@static': path.resolve(__dirname, 'static/'),
-        },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-gdpr-cookies`,
-      options: {
-        googleAnalytics: {
-          trackingId: process.env.GATSBY_GA_TRACKING_ID,
-          anonymize: true,
         },
       },
     },
