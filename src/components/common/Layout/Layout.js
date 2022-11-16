@@ -1,50 +1,37 @@
 import React from 'react';
-import { I18nextProvider, useTranslation } from 'react-i18next';
+import { I18nextProvider } from 'react-i18next';
 import PropTypes from 'prop-types';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { ThemeProvider } from 'styled-components';
-import CookieConsent from 'react-cookie-consent';
-
 import SEO from '@common/SEO';
-
 import theme from '@styles/theme';
 import GlobalStyles from '@styles/GlobalStyles';
+import { hasAcceptedCookies } from '@graasp/sdk';
 
 import i18n from '../../../config/i18n/i18n';
+import CookiesBanner from '../CookiesBanner';
 
-const Layout = ({ children }) => {
-  const { t } = useTranslation();
+import '@graasp/ui/dist/bundle.css';
+
+import { ENV, GA_MEASUREMENT_ID, NODE_ENV } from '../../../config/constants';
+
+if (GA_MEASUREMENT_ID && hasAcceptedCookies() && NODE_ENV !== ENV.TEST) {
+  ReactGA.initialize(GA_MEASUREMENT_ID);
+  ReactGA.send('pageview');
+}
+
+function Layout({ children }) {
   return (
     <I18nextProvider i18n={i18n}>
       <ThemeProvider theme={theme}>
-        <>
-          <SEO />
-          <GlobalStyles />
-          {children}
-          <CookieConsent
-            location="bottom"
-            buttonText={t('Accept')}
-            cookieName="gatsby-gdpr-google-analytics"
-            buttonStyle={{ background: '#fafafa', fontSize: '13px' }}
-            onAccept={() => {
-              ReactGA.initialize(process.env.GATSBY_GA_TRACKING_ID);
-              ReactGA.pageview('/');
-            }}
-            sameSite="lax"
-          >
-            {t(
-              'We use cookies and other tracking technologies to improve your ' +
-                'browsing experience on our website, to analyze our website traffic, ' +
-                'and to understand where our visitors are coming from. By browsing our ' +
-                'website, you consent to our use of cookies and other tracking ' +
-                'technologies.',
-            )}
-          </CookieConsent>
-        </>
+        <SEO />
+        <GlobalStyles />
+        {children}
+        <CookiesBanner />
       </ThemeProvider>
     </I18nextProvider>
   );
-};
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

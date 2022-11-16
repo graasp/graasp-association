@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 import { Container } from '@components/global';
 
-import { useTranslation } from 'react-i18next';
-
 import { ReactComponent as GraaspLogo } from '@images/art/hand.svg';
+import { ASSOCIATION } from '@graasp/translations';
+import { useAssociationTranslation } from '../../config/i18n/i18n';
 
-const Header = () => {
-  const { t } = useTranslation();
+function Header() {
+  const { t: translateAssociation } = useAssociationTranslation();
 
   return (
     <HeaderWrapper>
@@ -16,17 +16,13 @@ const Header = () => {
         <Grid>
           <Art>{GraaspLogo()}</Art>
           <Text>
-            <h1>
-              {t(
-                'Graasp is a Non-Profit Organization Promoting Digital Education',
-              )}
-            </h1>
+            <h1>{translateAssociation(ASSOCIATION.BANNER_TEXT)}</h1>
           </Text>
         </Grid>
       </Container>
     </HeaderWrapper>
   );
-};
+}
 
 const HeaderWrapper = styled.header`
   background-color: ${props => props.theme.color.primary};

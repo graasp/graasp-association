@@ -1,20 +1,28 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { ASSOCIATION } from '@graasp/translations';
+import { URL_SEO_IMAGE, URL_GRAASP_ASSOCIATION } from '../../config/hrefs';
+import { useAssociationTranslation } from '../../config/i18n/i18n';
 
-const SEO_DATA = {
-  description:
-    'The Graasp Association supports innovation in digital education.',
-  title: 'Graasp Association',
-  url: '',
-  author: 'Graasp',
-  keywords: ['Graasp', 'Graasp Association', 'digital education', 'EPFL'],
-  img:
-    'https://images.unsplash.com/photo-1504860708171-19abd233ec3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-  twitterId: '',
-  facebookId: '',
-};
+function SEO() {
+  const { t: translateAssociation } = useAssociationTranslation();
 
-const SEO = () => {
+  const SEO_DATA = {
+    description: translateAssociation(ASSOCIATION.SEO_DESCRIPTION),
+    title: translateAssociation(ASSOCIATION.SEO_TITLE),
+    url: URL_GRAASP_ASSOCIATION,
+    author: 'Graasp',
+    keywords: [
+      translateAssociation(ASSOCIATION.SEO_KEYWORD_GRAASP_ASSOCIATION),
+      translateAssociation(ASSOCIATION.SEO_KEYWORD_DIGITAL_EDUCATION),
+      'Graasp',
+      'EPFL',
+    ],
+    img: URL_SEO_IMAGE,
+    twitterId: 'graasp',
+    facebookId: 'graasp',
+  };
+
   return (
     <Helmet>
       <meta property="fb:app_id" content={SEO_DATA.facebookId} />
@@ -39,6 +47,6 @@ const SEO = () => {
       <html lang="en" />
     </Helmet>
   );
-};
+}
 
 export default SEO;

@@ -3,83 +3,71 @@ import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import { useTranslation } from 'react-i18next';
-
 import { Section, Container } from '@components/global';
+
+import { ASSOCIATION } from '@graasp/translations';
+import { useAssociationTranslation } from '../../config/i18n/i18n';
 
 const TEAM = [
   {
     name: 'Denis Gillet',
     image: 'denis.png',
-    role: 'President',
+    role: ASSOCIATION.TITLE_PRESIDENT,
   },
   {
     name: 'Isabelle Vonèche Cardia',
     image: 'isabelle.jpg',
-    role: 'VP Communication',
+    role: ASSOCIATION.TITLE_VP_COMMUNICATION,
   },
   {
     name: 'María Jesús Rodríguez-Triana',
     image: 'maria.jpg',
-    role: 'VP Education',
+    role: ASSOCIATION.TITLE_VP_EDUCATION,
   },
   {
     name: 'Juan Carlos Farah',
     image: 'juancarlos.jpg',
-    role: 'VP Research',
+    role: ASSOCIATION.TITLE_VP_RESEARCH,
   },
   {
     name: 'Kim Lan Phan Hoang',
     image: 'kim.jpg',
-    role: 'VP Engineering',
+    role: ASSOCIATION.TITLE_VP_ENGINEERING,
   },
   {
     name: 'Jérémy La Scala',
     image: 'jeremy.jpg',
-    role: 'Software Engineer',
+    role: ASSOCIATION.TITLE_SOFTWARE_ENGINEER,
   },
   {
     name: 'Alexandre Chau',
     image: 'alexandre.jpg',
-    role: 'Software Engineer',
+    role: ASSOCIATION.TITLE_SOFTWARE_ENGINEER,
   },
   {
     name: 'Basile Spaenlehauer',
     image: 'basile.jpg',
-    role: 'Software Engineer',
-  },
-  {
-    name: 'Philippe Kobel',
-    image: 'philippe.jpg',
-    role: 'Ambassador',
-  },
-];
-
-const COLLABORATORS = [
-  {
-    name: 'André Nogueira',
-    image: 'andre.jpg',
-    role: 'Software Engineer',
+    role: ASSOCIATION.TITLE_SOFTWARE_ENGINEER,
   },
   {
     name: 'Hagop Taminian',
     image: 'hagop.jpg',
-    role: 'Software Engineer',
-  },
-  {
-    name: 'Joana Machado',
-    image: 'joana.jpg',
-    role: 'Researcher',
+    role: ASSOCIATION.TITLE_SOFTWARE_ENGINEER,
   },
   {
     name: 'Álvaro Bautista',
     image: 'alvaro.jpeg',
-    role: 'Software Engineer',
+    role: ASSOCIATION.TITLE_SOFTWARE_ENGINEER,
+  },
+  {
+    name: 'Philippe Kobel',
+    image: 'philippe.jpg',
+    role: ASSOCIATION.TITLE_AMBASSADOR,
   },
 ];
 
-const Team = () => {
-  const { t } = useTranslation();
+function Team() {
+  const { t: translateAssociation } = useAssociationTranslation();
 
   return (
     <StaticQuery
@@ -102,8 +90,7 @@ const Team = () => {
       render={data => (
         <Section id="team" accent="secondary">
           <Container style={{ position: 'relative' }}>
-            <h1>{t('The Team')}</h1>
-            <p>{t('Core')}</p>
+            <h1>{translateAssociation(ASSOCIATION.HEADER_TEAM)}</h1>
             <TeamGrid>
               {TEAM.map(({ name, image, role }) => {
                 const img = data.allFile.edges.find(
@@ -118,27 +105,7 @@ const Team = () => {
                       style={{ borderRadius: '50%' }}
                     />
                     <Title>{name}</Title>
-                    <Subtitle>{t(role)}</Subtitle>
-                  </div>
-                );
-              })}
-            </TeamGrid>
-            <p style={{ marginTop: '5rem' }}>{t('Collaborators')}</p>
-            <TeamGrid>
-              {COLLABORATORS.map(({ name, image, role }) => {
-                const img = data.allFile.edges.find(
-                  ({ node }) => node.relativePath === image,
-                )?.node;
-
-                return (
-                  <div key={name}>
-                    <Img
-                      fluid={img?.childImageSharp.fluid}
-                      alt={name}
-                      style={{ borderRadius: '50%' }}
-                    />
-                    <Title>{name}</Title>
-                    <Subtitle>{t(role)}</Subtitle>
+                    <Subtitle>{translateAssociation(role)}</Subtitle>
                   </div>
                 );
               })}
@@ -148,7 +115,7 @@ const Team = () => {
       )}
     />
   );
-};
+}
 
 const TeamGrid = styled.div`
   display: grid;

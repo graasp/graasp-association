@@ -11,18 +11,20 @@ import Faq from '@sections/Faq';
 import Footer from '@sections/Footer';
 import Background from '@sections/Background';
 
-const IndexPage = () => (
-  <Layout>
-    <Navbar />
-    <Background>
-      <Header />
-    </Background>
-    <About />
-    <Partners />
-    <Team />
-    <Faq />
-    <Footer />
-  </Layout>
-);
+function IndexPage() {
+  return (
+    <Layout>
+      <Navbar />
+      <Background>
+        <Header />
+      </Background>
+      <About />
+      <Partners />
+      <Team />
+      <Faq />
+      <Footer />
+    </Layout>
+  );
+}
 
 export default IndexPage;

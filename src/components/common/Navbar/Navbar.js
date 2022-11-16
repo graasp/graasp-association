@@ -8,6 +8,7 @@ import Scrollspy from 'react-scrollspy';
 
 import { Container } from '@components/global';
 import { ReactComponent as MenuIcon } from '@static/icons/menu.svg';
+import { ASSOCIATION, namespaces } from '@graasp/translations';
 import {
   Nav,
   NavItem,
@@ -20,7 +21,12 @@ import {
 import TranslationPair from './TranslationPair';
 import i18n from '../../../config/i18n/i18n';
 
-const NAV_ITEMS = ['About', 'Partners', 'Team', 'FAQ'];
+const NAV_ITEMS = [
+  { id: 'about', text: ASSOCIATION.NAV_ABOUT },
+  { id: 'partners', text: ASSOCIATION.NAV_PARTNERS },
+  { id: 'team', text: ASSOCIATION.NAV_TEAM },
+  { id: 'faq', text: ASSOCIATION.NAV_FAQ },
+];
 
 class Navbar extends Component {
   state = {
@@ -53,22 +59,22 @@ class Navbar extends Component {
     }
   };
 
-  getNavAnchorLink = item => (
-    <AnchorLink href={`#${item.toLowerCase()}`} onClick={this.closeMobileMenu}>
-      {i18n.t(item)}
+  getNavAnchorLink = (id, text) => (
+    <AnchorLink href={`#${id}`} onClick={this.closeMobileMenu}>
+      {i18n.t(text, { ns: namespaces.association })}
     </AnchorLink>
   );
 
   getNavList = ({ mobile = false }) => (
     <NavListWrapper mobile={mobile}>
       <Scrollspy
-        items={NAV_ITEMS.map(item => item.toLowerCase())}
+        items={NAV_ITEMS.map(({ id }) => id)}
         currentClassName="active"
         mobile={mobile}
         offset={-64}
       >
-        {NAV_ITEMS.map(navItem => (
-          <NavItem key={navItem}>{this.getNavAnchorLink(navItem)}</NavItem>
+        {NAV_ITEMS.map(({ id, text }) => (
+          <NavItem key={id}>{this.getNavAnchorLink(id, text)}</NavItem>
         ))}
       </Scrollspy>
     </NavListWrapper>

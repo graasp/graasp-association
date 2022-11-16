@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TranslationPair = ({ englishCallback, frenchCallback }) => {
+function TranslationPair({ englishCallback, frenchCallback }) {
   return (
     <div style={{ display: 'flex', marginRight: 20, marginLeft: 0 }}>
       <button
@@ -44,7 +44,7 @@ const TranslationPair = ({ englishCallback, frenchCallback }) => {
       </button>
     </div>
   );
-};
+}
 
 TranslationPair.propTypes = {
   englishCallback: PropTypes.func.isRequired,

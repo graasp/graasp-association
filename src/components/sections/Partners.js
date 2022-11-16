@@ -5,7 +5,6 @@ import { Section, Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
 import Carousel, { consts } from 'react-elastic-carousel';
-import { useTranslation } from 'react-i18next';
 
 import { ReactComponent as GenevaLogo } from '@images/logos/geneva.svg';
 import { ReactComponent as UnctadLogo } from '@images/logos/unctad.svg';
@@ -15,6 +14,8 @@ import { ReactComponent as EpflInnovationLogo } from '@images/logos/epfl-innovat
 import { ReactComponent as TremplinLogo } from '@images/logos/tremplin.svg';
 import { ReactComponent as UnineLogo } from '@images/logos/unine.svg';
 import { ReactComponent as GogaLogo } from '@images/logos/goga.svg';
+import { ASSOCIATION } from '@graasp/translations';
+import { useAssociationTranslation } from '../../config/i18n/i18n';
 
 const LOGOS = [
   {
@@ -58,15 +59,15 @@ const breakPoints = [
   { width: 900, itemsToShow: 4 },
 ];
 
-const UsedBy = () => {
-  const { t } = useTranslation();
+function UsedBy() {
+  const { t: translateAssociation } = useAssociationTranslation();
 
   return (
     <Section id="partners" accent>
       <StyledContainer>
         <div>
           <h2 style={{ textAlign: 'center' }}>
-            {t('Our solutions are used around the world')}
+            {translateAssociation(ASSOCIATION.HEADER_PARTNERS)}
           </h2>
           <Carousel
             breakPoints={breakPoints}
@@ -103,7 +104,7 @@ const UsedBy = () => {
       </StyledContainer>
     </Section>
   );
-};
+}
 
 const StyledContainer = styled(Container)`
   margin: 0 auto;
