@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import { useTranslation } from 'react-i18next';
-
 import { Section, Container } from '@components/global';
 
-import ASSOCIATION from '../../config/i18n/keys';
+import { ASSOCIATION } from '@graasp/translations';
+import { useAssociationTranslation } from '../../config/i18n/i18n';
 
 const TEAM = [
   {
@@ -67,8 +66,8 @@ const TEAM = [
   },
 ];
 
-const Team = () => {
-  const { t } = useTranslation();
+function Team() {
+  const { t: translateAssociation } = useAssociationTranslation();
 
   return (
     <StaticQuery
@@ -91,7 +90,7 @@ const Team = () => {
       render={data => (
         <Section id="team" accent="secondary">
           <Container style={{ position: 'relative' }}>
-            <h1>{t(ASSOCIATION.HEADER_TEAM)}</h1>
+            <h1>{translateAssociation(ASSOCIATION.HEADER_TEAM)}</h1>
             <TeamGrid>
               {TEAM.map(({ name, image, role }) => {
                 const img = data.allFile.edges.find(
@@ -106,7 +105,7 @@ const Team = () => {
                       style={{ borderRadius: '50%' }}
                     />
                     <Title>{name}</Title>
-                    <Subtitle>{t(role)}</Subtitle>
+                    <Subtitle>{translateAssociation(role)}</Subtitle>
                   </div>
                 );
               })}
@@ -116,7 +115,7 @@ const Team = () => {
       )}
     />
   );
-};
+}
 
 const TeamGrid = styled.div`
   display: grid;

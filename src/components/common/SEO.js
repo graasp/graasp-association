@@ -1,20 +1,20 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { useTranslation } from 'react-i18next';
-import ASSOCIATION from '../../config/i18n/keys';
+import { ASSOCIATION } from '@graasp/translations';
 import { URL_SEO_IMAGE, URL_GRAASP_ASSOCIATION } from '../../config/hrefs';
+import { useAssociationTranslation } from '../../config/i18n/i18n';
 
-const SEO = () => {
-  const { t } = useTranslation();
+function SEO() {
+  const { t: translateAssociation } = useAssociationTranslation();
 
   const SEO_DATA = {
-    description: t(ASSOCIATION.SEO_DESCRIPTION),
-    title: t(ASSOCIATION.SEO_TITLE),
+    description: translateAssociation(ASSOCIATION.SEO_DESCRIPTION),
+    title: translateAssociation(ASSOCIATION.SEO_TITLE),
     url: URL_GRAASP_ASSOCIATION,
     author: 'Graasp',
     keywords: [
-      t(ASSOCIATION.SEO_KEYWORD_GRAASP_ASSOCIATION),
-      t(ASSOCIATION.SEO_KEYWORD_DIGITAL_EDUCATION),
+      translateAssociation(ASSOCIATION.SEO_KEYWORD_GRAASP_ASSOCIATION),
+      translateAssociation(ASSOCIATION.SEO_KEYWORD_DIGITAL_EDUCATION),
       'Graasp',
       'EPFL',
     ],
@@ -47,6 +47,6 @@ const SEO = () => {
       <html lang="en" />
     </Helmet>
   );
-};
+}
 
 export default SEO;

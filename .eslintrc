@@ -19,7 +19,7 @@
     "cy": true,
     "Cypress": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "rules": {
     "import/no-unresolved": [
       2, {

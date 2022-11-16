@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import { Section, Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
-import { useTranslation } from 'react-i18next';
-
 import { ReactComponent as EcLogo } from '@images/sponsors/ec.svg';
 import { ReactComponent as EpflLogo } from '@images/sponsors/epfl.svg';
 import { ReactComponent as SwissUniLogo } from '@images/sponsors/swissuniversities.svg';
@@ -15,7 +13,8 @@ import { ReactComponent as GraaspLogoDark } from '@images/art/handDark.svg';
 import GithubIcon from '@static/icons/github.svg';
 import WebIcon from '@static/icons/web.svg';
 import LinkedInIcon from '@static/icons/linkedin.svg';
-import ASSOCIATION from '../../config/i18n/keys';
+import { ASSOCIATION } from '@graasp/translations';
+import { useAssociationTranslation } from '../../config/i18n/i18n';
 
 const copyright = `© Graasp 2014 - ${new Date().getFullYear()}`;
 
@@ -49,8 +48,8 @@ const SOCIAL = [
   },
 ];
 
-const Footer = () => {
-  const { t } = useTranslation();
+function Footer() {
+  const { t: translateAssociation } = useAssociationTranslation();
 
   return (
     <>
@@ -58,7 +57,7 @@ const Footer = () => {
         <StyledLogoContainer>
           <div>
             <h3 style={{ textAlign: 'center' }}>
-              {t(ASSOCIATION.HEADER_SUPPORTED_BY)}
+              {translateAssociation(ASSOCIATION.HEADER_SUPPORTED_BY)}
             </h3>
             <LogoGrid>
               {LOGOS.map(({ logo, link }) => (
@@ -95,7 +94,7 @@ const Footer = () => {
       </FooterWrapper>
     </>
   );
-};
+}
 
 const LogoGrid = styled.div`
   display: grid;

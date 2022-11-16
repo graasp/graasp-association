@@ -8,29 +8,30 @@ import React from 'react';
 
 import { Section, Container } from '@components/global';
 
-import { useTranslation, Trans } from 'react-i18next';
-
+import { Trans } from 'react-i18next';
+import { ASSOCIATION, namespaces } from '@graasp/translations';
 import FaqItem from '@common/FaqItem';
+import { useAssociationTranslation } from '../../config/i18n/i18n';
 
-import ASSOCIATION from '../../config/i18n/keys';
 import {
   URL_GRAASP_SIGNUP,
   URL_GRAASP_ORG,
   MAILTO_CONTACT_GRAASP,
 } from '../../config/hrefs';
 
-const Faq = () => {
-  const { t } = useTranslation();
+function Faq() {
+  const { t: translateAssociation } = useAssociationTranslation();
 
   return (
     <Section id="faq">
       <Container>
         <h1 style={{ marginBottom: 40, color: '#211E26' }}>
-          {t(ASSOCIATION.HEADER_FAQ)}
+          {translateAssociation(ASSOCIATION.HEADER_FAQ)}
         </h1>
         <div>
-          <FaqItem title={t(ASSOCIATION.QUESTION_PLATFORMS)}>
+          <FaqItem title={translateAssociation(ASSOCIATION.QUESTION_PLATFORMS)}>
             <Trans
+              ns={namespaces.association}
               components={[
                 <a
                   href={URL_GRAASP_ORG}
@@ -44,8 +45,9 @@ const Faq = () => {
               {ASSOCIATION.ANSWER_PLATFORMS}
             </Trans>
           </FaqItem>
-          <FaqItem title={t(ASSOCIATION.QUESTION_GRAASP)}>
+          <FaqItem title={translateAssociation(ASSOCIATION.QUESTION_GRAASP)}>
             <Trans
+              ns={namespaces.association}
               components={[
                 <a
                   href={URL_GRAASP_ORG}
@@ -59,8 +61,11 @@ const Faq = () => {
               {ASSOCIATION.ANSWER_GRAASP}
             </Trans>
           </FaqItem>
-          <FaqItem title={t(ASSOCIATION.QUESTION_GETTING_STARTED)}>
+          <FaqItem
+            title={translateAssociation(ASSOCIATION.QUESTION_GETTING_STARTED)}
+          >
             <Trans
+              ns={namespaces.association}
               components={[
                 <a
                   href={URL_GRAASP_SIGNUP}
@@ -74,8 +79,9 @@ const Faq = () => {
               {ASSOCIATION.ANSWER_GETTING_STARTED}
             </Trans>
           </FaqItem>
-          <FaqItem title={t(ASSOCIATION.QUESTION_COST)}>
+          <FaqItem title={translateAssociation(ASSOCIATION.QUESTION_COST)}>
             <Trans
+              ns={namespaces.association}
               components={[
                 <a
                   href={URL_GRAASP_ORG}
@@ -90,8 +96,9 @@ const Faq = () => {
               {ASSOCIATION.ANSWER_COST}
             </Trans>
           </FaqItem>
-          <FaqItem title={t(ASSOCIATION.QUESTION_TRAINING)}>
+          <FaqItem title={translateAssociation(ASSOCIATION.QUESTION_TRAINING)}>
             <Trans
+              ns={namespaces.association}
               components={[
                 <a href={MAILTO_CONTACT_GRAASP}>contact@graasp.org</a>,
               ]}
@@ -99,13 +106,13 @@ const Faq = () => {
               {ASSOCIATION.ANSWER_TRAINING}
             </Trans>
           </FaqItem>
-          <FaqItem title={t(ASSOCIATION.QUESTION_BASE)}>
-            <Trans>{ASSOCIATION.ANSWER_BASE}</Trans>
+          <FaqItem title={translateAssociation(ASSOCIATION.QUESTION_BASE)}>
+            <Trans ns={namespaces.association}>{ASSOCIATION.ANSWER_BASE}</Trans>
           </FaqItem>
         </div>
       </Container>
     </Section>
   );
-};
+}
 
 export default Faq;

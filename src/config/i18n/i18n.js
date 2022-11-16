@@ -1,25 +1,10 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import en from './en.json';
-import fr from './fr.json';
+import { initReactI18next, useTranslation } from 'react-i18next';
+import buildI18n, { namespaces } from '@graasp/translations';
 
-i18n.use(initReactI18next).init({
-  resources: {
-    en: { association: en },
-    fr: { association: fr },
-  },
-  fallbackLng: 'en',
-  debug: process.env.NODE_ENV !== 'production',
-  ns: ['association'],
-  defaultNS: 'association',
-  keySeparator: false,
-  interpolation: {
-    escapeValue: false,
-    formatSeparator: ',',
-  },
-  react: {
-    wait: true,
-  },
-});
+const i18n = buildI18n().use(initReactI18next);
+
+export const useCommonTranslation = () => useTranslation(namespaces.common);
+export const useAssociationTranslation = () =>
+  useTranslation(namespaces.association);
 
 export default i18n;

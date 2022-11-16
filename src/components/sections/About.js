@@ -5,9 +5,10 @@ import Img from 'gatsby-image';
 
 import { Section, Container } from '@components/global';
 
-import { useTranslation, Trans } from 'react-i18next';
+import { Trans } from 'react-i18next';
+import { ASSOCIATION, namespaces } from '@graasp/translations';
+import { useAssociationTranslation } from '../../config/i18n/i18n';
 
-import ASSOCIATION from '../../config/i18n/keys';
 import {
   URL_GRAASP_ORG,
   URL_GRAASP_DESKTOP,
@@ -15,8 +16,8 @@ import {
   URL_GRAASP_LIBRARY,
 } from '../../config/hrefs';
 
-const About = () => {
-  const { t } = useTranslation();
+function About() {
+  const { t: translateAssociation } = useAssociationTranslation();
 
   return (
     <StaticQuery
@@ -83,8 +84,16 @@ const About = () => {
           <Container>
             <Grid>
               <div>
-                <h2>{t(ASSOCIATION.ABOUT_CREATE_RESOURCES_HEADER)}</h2>
-                <p>{t(ASSOCIATION.ABOUT_CREATE_RESOURCES_TEXT)}</p>
+                <h2>
+                  {translateAssociation(
+                    ASSOCIATION.ABOUT_CREATE_RESOURCES_HEADER,
+                  )}
+                </h2>
+                <p>
+                  {translateAssociation(
+                    ASSOCIATION.ABOUT_CREATE_RESOURCES_TEXT,
+                  )}
+                </p>
               </div>
               <Art>
                 <Img fluid={data.art_learn.childImageSharp.fluid} />
@@ -95,9 +104,12 @@ const About = () => {
                 <Img fluid={data.art_ideas.childImageSharp.fluid} />
               </Art>
               <div>
-                <h2>{t(ASSOCIATION.ABOUT_ADAPTABLE_HEADER)}</h2>
+                <h2>
+                  {translateAssociation(ASSOCIATION.ABOUT_ADAPTABLE_HEADER)}
+                </h2>
                 <p>
                   <Trans
+                    ns={namespaces.association}
                     components={[
                       <a
                         href={URL_GRAASP_ORG}
@@ -122,8 +134,10 @@ const About = () => {
             </Grid>
             <Grid>
               <div>
-                <h2>{t(ASSOCIATION.ABOUT_SUPPORT_HEADER)}</h2>
-                <p>{t(ASSOCIATION.ABOUT_SUPPORT_TEXT)}</p>
+                <h2>
+                  {translateAssociation(ASSOCIATION.ABOUT_SUPPORT_HEADER)}
+                </h2>
+                <p>{translateAssociation(ASSOCIATION.ABOUT_SUPPORT_TEXT)}</p>
               </div>
               <Art>
                 <Img fluid={data.art_fast.childImageSharp.fluid} />
@@ -134,15 +148,20 @@ const About = () => {
                 <Img fluid={data.art_pot.childImageSharp.fluid} />
               </Art>
               <div>
-                <h2>{t(ASSOCIATION.ABOUT_COMMUNITY_HEADER)}</h2>
-                <p>{t(ASSOCIATION.ABOUT_COMMUNITY_TEXT)}</p>
+                <h2>
+                  {translateAssociation(ASSOCIATION.ABOUT_COMMUNITY_HEADER)}
+                </h2>
+                <p>{translateAssociation(ASSOCIATION.ABOUT_COMMUNITY_TEXT)}</p>
               </div>
             </Grid>
             <Grid>
               <div>
-                <h2>{t(ASSOCIATION.ABOUT_TRANSLATIONAL_HEADER)}</h2>
+                <h2>
+                  {translateAssociation(ASSOCIATION.ABOUT_TRANSLATIONAL_HEADER)}
+                </h2>
                 <p>
                   <Trans
+                    ns={namespaces.association}
                     components={[
                       <a
                         href={URL_GRAASP_INSIGHTS}
@@ -173,7 +192,7 @@ const About = () => {
       )}
     />
   );
-};
+}
 
 const Art = styled.figure`
   margin: 0;

@@ -1,46 +1,37 @@
 import React from 'react';
-import { I18nextProvider, useTranslation } from 'react-i18next';
+import { I18nextProvider } from 'react-i18next';
 import PropTypes from 'prop-types';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { ThemeProvider } from 'styled-components';
-import CookieConsent from 'react-cookie-consent';
-
 import SEO from '@common/SEO';
-
 import theme from '@styles/theme';
 import GlobalStyles from '@styles/GlobalStyles';
+import { hasAcceptedCookies } from '@graasp/sdk';
 
 import i18n from '../../../config/i18n/i18n';
+import CookiesBanner from '../CookiesBanner';
 
-import ASSOCIATION from '../../../config/i18n/keys';
+import '@graasp/ui/dist/bundle.css';
 
-const Layout = ({ children }) => {
-  const { t } = useTranslation();
+import { ENV, GA_MEASUREMENT_ID, NODE_ENV } from '../../../config/constants';
+
+if (GA_MEASUREMENT_ID && hasAcceptedCookies() && NODE_ENV !== ENV.TEST) {
+  ReactGA.initialize(GA_MEASUREMENT_ID);
+  ReactGA.send('pageview');
+}
+
+function Layout({ children }) {
   return (
     <I18nextProvider i18n={i18n}>
       <ThemeProvider theme={theme}>
-        <>
-          <SEO />
-          <GlobalStyles />
-          {children}
-          <CookieConsent
-            location="bottom"
-            buttonText={t(ASSOCIATION.COOKIES_ACCEPT_BUTTON_TEXT)}
-            cookieName="gatsby-gdpr-google-analytics"
-            buttonStyle={{ background: '#fafafa', fontSize: '13px' }}
-            onAccept={() => {
-              ReactGA.initialize(process.env.GATSBY_GA_TRACKING_ID);
-              ReactGA.pageview('/');
-            }}
-            sameSite="lax"
-          >
-            {t(ASSOCIATION.COOKIES_TEXT)}
-          </CookieConsent>
-        </>
+        <SEO />
+        <GlobalStyles />
+        {children}
+        <CookiesBanner />
       </ThemeProvider>
     </I18nextProvider>
   );
-};
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
