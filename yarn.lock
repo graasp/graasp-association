@@ -1978,12 +1978,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graasp/translations@github:graasp/graasp-translations.git#65-constants":
-  version: 0.1.0
-  resolution: "@graasp/translations@https://github.com/graasp/graasp-translations.git#commit=17379f2d621d20ba5fc7dedb4a2b8ef14b388e86"
+"@graasp/translations@npm:1.8.0":
+  version: 1.8.0
+  resolution: "@graasp/translations@npm:1.8.0"
   dependencies:
     i18next: 21.8.1
-  checksum: 55c9e874a66a708e2eaca6d3e2c2cbc3005b1e51c589be2adc431beedcab48fdff561d3a047b71929c1aac94fad6730097fe49fe08c5dd1a91cbb04850ad02c6
+  checksum: 61c99573820d08f675b9294c075c0995bc2589c1aac962c2eb140b73de45125b28131e5712848b416c8e8a7694f7b6381d903b9e8fd6f4db9cb41ab553352c52
   languageName: node
   linkType: hard
 
@@ -11719,7 +11719,7 @@ __metadata:
     "@emotion/react": 11.10.5
     "@emotion/styled": 11.10.5
     "@graasp/sdk": "github:graasp/graasp-sdk"
-    "@graasp/translations": "github:graasp/graasp-translations.git#65-constants"
+    "@graasp/translations": 1.8.0
     "@graasp/ui": "github:graasp/graasp-ui#v0"
     "@mui/icons-material": 5.10.14
     "@mui/lab": 5.0.0-alpha.108
