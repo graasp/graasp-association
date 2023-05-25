@@ -37,7 +37,7 @@ const TEAM = [
   {
     name: 'Jérémy La Scala',
     image: 'jeremy.jpg',
-    role: ASSOCIATION.TITLE_SOFTWARE_ENGINEER,
+    role: ASSOCIATION.TITLE_VP_OUTREACH,
   },
   {
     name: 'Alexandre Chau',
