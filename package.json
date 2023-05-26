@@ -15,7 +15,7 @@
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
     "@graasp/sdk": "github:graasp/graasp-sdk",
-    "@graasp/translations": "github:graasp/graasp-translations.git#65-constants",
+    "@graasp/translations": "github:graasp/graasp-translations.git",
     "@graasp/ui": "github:graasp/graasp-ui#v0",
     "@mui/icons-material": "5.10.14",
     "@mui/lab": "5.0.0-alpha.108",

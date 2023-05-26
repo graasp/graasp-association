@@ -17,7 +17,7 @@ const TEAM = [
   {
     name: 'Isabelle Vonèche Cardia',
     image: 'isabelle.jpg',
-    role: ASSOCIATION.TITLE_VP_COMMUNICATION,
+    role: ASSOCIATION.TITLE_MANAGING_DIRECTOR,
   },
   {
     name: 'María Jesús Rodríguez-Triana',
