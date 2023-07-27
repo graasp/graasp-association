@@ -1,0 +1,37 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - "main"
+
+  workflow_dispatch:
+
+jobs:
+  deploy-app-to-prod:
+    name: Deploy to production
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Yarn install and Cache dependencies
+        uses: graasp/graasp-deploy/.github/actions/yarn-install-and-cache@v1
+
+      - name: Yarn build
+        # Set environment variables required to perform the build. These are only available to this step
+        # env:
+        run: yarn build
+        shell: bash
+
+      - name: Deploy
+        uses: graasp/graasp-deploy/.github/actions/deploy-s3@v1
+        # Replace input build-folder or version if needed
+        with:
+          build-folder: 'build'
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.APPS_AWS_REGION }}
+          aws-s3-bucket-name: ${{ secrets.AWS_S3_BUCKET_NAME_APPS }}
+          cloudfront-distribution-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_APPS }}
