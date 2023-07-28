@@ -20,7 +20,7 @@ function Background({ children }) {
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <BackgroundImage fluid={data.background.childImageSharp.fluid}>
           {children}
         </BackgroundImage>

@@ -92,7 +92,7 @@ function Team() {
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <Section id="team" accent="secondary">
           <Container style={{ position: 'relative' }}>
             <h1>{translateAssociation(ASSOCIATION.HEADER_TEAM)}</h1>
@@ -100,12 +100,12 @@ function Team() {
               {TEAM.map(({ name, image, role }) => {
                 const img = data.allFile.edges.find(
                   ({ node }) => node.relativePath === image,
-                )?.node;
+                ).node;
 
                 return (
                   <div key={name}>
                     <Img
-                      fluid={img?.childImageSharp.fluid}
+                      fluid={img.childImageSharp.fluid}
                       alt={name}
                       style={{ borderRadius: '50%' }}
                     />
@@ -130,29 +130,29 @@ const TeamGrid = styled.div`
   justify-content: space-between;
   margin-top: 72px;
 
-  @media (max-width: ${props => props.theme.screen.lg}) {
+  @media (max-width: ${(props) => props.theme.screen.lg}) {
     justify-content: start;
   }
 
-  @media (max-width: ${props => props.theme.screen.md}) {
+  @media (max-width: ${(props) => props.theme.screen.md}) {
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
 
-  @media (max-width: ${props => props.theme.screen.xs}) {
+  @media (max-width: ${(props) => props.theme.screen.xs}) {
     grid-gap: 24px;
   }
 `;
 
 const Title = styled.p`
-  ${props => props.theme.font_size.small};
+  ${(props) => props.theme.font_size.small};
   margin-top: 16px;
-  color: ${props => props.theme.color.black.regular};
+  color: ${(props) => props.theme.color.black.regular};
 `;
 
 const Subtitle = styled.p`
-  ${props => props.theme.font_size.smaller};
-  color: ${props => props.theme.color.black.light};
+  ${(props) => props.theme.font_size.smaller};
+  color: ${(props) => props.theme.color.black.light};
 `;
 
 export default Team;

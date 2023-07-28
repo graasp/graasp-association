@@ -7,7 +7,7 @@ import { DOMAIN } from '../../config/constants';
 import { useCommonTranslation } from '../../config/i18n/i18n';
 
 const CookiesBanner = dynamic(
-  () => import('@graasp/ui').then(mod => mod.CookiesBanner),
+  () => import('@graasp/ui').then((mod) => mod.CookiesBanner),
   {
     ssr: false,
   },

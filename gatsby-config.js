@@ -10,16 +10,6 @@ require('dotenv').config({
 module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-svgr`,
-      options: {
-        svgoConfig: {
-          plugins: {
-            removeViewBox: false,
-          },
-        },
-      },
-    },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,

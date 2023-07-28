@@ -49,7 +49,9 @@ class Navbar extends Component {
   }
 
   toggleMobileMenu = () => {
-    this.setState(prevState => ({ mobileMenuOpen: !prevState.mobileMenuOpen }));
+    this.setState((prevState) => ({
+      mobileMenuOpen: !prevState.mobileMenuOpen,
+    }));
   };
 
   closeMobileMenu = () => {
@@ -120,7 +122,8 @@ class Navbar extends Component {
                 onClick={this.toggleMobileMenu}
                 style={{ color: 'black' }}
               >
-                <MenuIcon />
+                <img src={MenuIcon} alt="Menu icon" />
+                {/* TODO: check */}
               </button>
             </div>
           </Mobile>

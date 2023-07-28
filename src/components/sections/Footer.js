@@ -70,7 +70,8 @@ function Footer() {
                     alignItems: 'center',
                   }}
                 >
-                  {logo()}
+                  <img src={logo} alt="logo" />
+                  {/* TODO: check */}
                 </ExternalLink>
               ))}
             </LogoGrid>
@@ -78,7 +79,12 @@ function Footer() {
         </StyledLogoContainer>
       </Section>
       <Art>
-        <GraaspLogoDark style={{ marginBottom: 30 }} />
+        <img
+          style={{ marginBottom: 30 }}
+          src={GraaspLogoDark}
+          alt="Graasp logo"
+        />{' '}
+        {/* TODO: check */}
       </Art>
       <FooterWrapper>
         <StyledContainer>
@@ -109,7 +115,7 @@ const LogoGrid = styled.div`
     }
   }
 
-  @media (max-width: ${props => props.theme.screen.sm}) {
+  @media (max-width: ${(props) => props.theme.screen.sm}) {
     grid-template-columns: 1fr;
   }
 `;
@@ -117,9 +123,9 @@ const LogoGrid = styled.div`
 const StyledLogoContainer = styled(Container)`
   margin: 0 auto;
   position: relative;
-  color: ${props => props.theme.color.black.regular};
+  color: ${(props) => props.theme.color.black.regular};
 
-  @media (max-width: ${props => props.theme.screen.md}) {
+  @media (max-width: ${(props) => props.theme.screen.md}) {
     justify-content: center;
   }
 `;
@@ -133,19 +139,19 @@ const SocialIcons = styled.div`
     height: 24px;
   }
 
-  @media (max-width: ${props => props.theme.screen.sm}) {
+  @media (max-width: ${(props) => props.theme.screen.sm}) {
     margin-top: 40px;
   }
 `;
 
 const FooterWrapper = styled.footer`
-  background-color: ${props => props.theme.color.primary};
+  background-color: ${(props) => props.theme.color.primary};
   padding: 32px 0;
 `;
 
 const Copyright = styled.div`
-  font-family: ${props => props.theme.font.secondary};
-  color: ${props => props.theme.color.white.regular};
+  font-family: ${(props) => props.theme.font.secondary};
+  color: ${(props) => props.theme.color.white.regular};
 
   a {
     text-decoration: none;
@@ -165,7 +171,7 @@ const StyledContainer = styled(Container)`
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: ${props => props.theme.screen.sm}) {
+  @media (max-width: ${(props) => props.theme.screen.sm}) {
     flex-direction: column;
     text-align: center;
   }

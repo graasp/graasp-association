@@ -96,7 +96,8 @@ function UsedBy() {
                   margin: '0 15px',
                 }}
               >
-                {logo()}
+                <img src={logo} alt="logo" />
+                {/* TODO: check */}
               </ExternalLink>
             ))}
           </Carousel>
@@ -109,9 +110,9 @@ function UsedBy() {
 const StyledContainer = styled(Container)`
   margin: 0 auto;
   position: relative;
-  color: ${props => props.theme.color.white.dark};
+  color: ${(props) => props.theme.color.white.dark};
 
-  @media (max-width: ${props => props.theme.screen.md}) {
+  @media (max-width: ${(props) => props.theme.screen.md}) {
     justify-content: center;
   }
 `;

@@ -9,6 +9,7 @@ import GlobalStyles from '@styles/GlobalStyles';
 import { hasAcceptedCookies } from '@graasp/sdk';
 
 import i18n from '../../../config/i18n/i18n';
+// eslint-disable-next-line import/no-named-as-default-member
 import CookiesBanner from '../CookiesBanner';
 
 import '@graasp/ui/dist/bundle.css';
