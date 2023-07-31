@@ -64,6 +64,11 @@ const TEAM = [
     image: 'philippe.jpg',
     role: ASSOCIATION.TITLE_AMBASSADOR,
   },
+  {
+    name: 'François Bierlaire',
+    image: 'francois.jpg',
+    role: ASSOCIATION.TITLE_PEDAGOGICAL_ENGINEER,
+  },
 ];
 
 function Team() {
