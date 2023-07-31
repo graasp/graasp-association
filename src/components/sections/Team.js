@@ -17,7 +17,7 @@ const TEAM = [
   {
     name: 'Isabelle Vonèche Cardia',
     image: 'isabelle.jpg',
-    role: ASSOCIATION.TITLE_MANAGING_DIRECTOR,
+    role: 'TITLE_MANAGING_DIRECTOR',
   },
   {
     name: 'María Jesús Rodríguez-Triana',
@@ -37,7 +37,7 @@ const TEAM = [
   {
     name: 'Jérémy La Scala',
     image: 'jeremy.jpg',
-    role: ASSOCIATION.TITLE_VP_OUTREACH,
+    role: 'TITLE_VP_OUTREACH',
   },
   {
     name: 'Alexandre Chau',
