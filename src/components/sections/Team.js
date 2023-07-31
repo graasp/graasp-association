@@ -67,7 +67,7 @@ const TEAM = [
   {
     name: 'François Bierlaire',
     image: 'francois.jpg',
-    role: ASSOCIATION.TITLE_PEDAGOGICAL_ENGINEER,
+    role: 'TITLE_PEDAGOGICAL_ENGINEER',
   },
 ];
 
