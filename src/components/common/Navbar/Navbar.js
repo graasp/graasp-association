@@ -7,8 +7,8 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Scrollspy from 'react-scrollspy';
 
 import { Container } from '@components/global';
-import { ReactComponent as MenuIcon } from '@static/icons/menu.svg';
 import { ASSOCIATION, namespaces } from '@graasp/translations';
+import MenuIcon from '@mui/icons-material/Menu';
 import {
   Nav,
   NavItem,
@@ -122,8 +122,7 @@ class Navbar extends Component {
                 onClick={this.toggleMobileMenu}
                 style={{ color: 'black' }}
               >
-                <img src={MenuIcon} alt="Menu icon" />
-                {/* TODO: check */}
+                <MenuIcon />
               </button>
             </div>
           </Mobile>

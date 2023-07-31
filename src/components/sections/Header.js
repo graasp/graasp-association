@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import { Container } from '@components/global';
 
-import { ReactComponent as GraaspLogo } from '@images/art/hand.svg';
 import { ASSOCIATION } from '@graasp/translations';
+import GraaspLogo from '../../images/art/hand.svg';
 import { useAssociationTranslation } from '../../config/i18n/i18n';
 
 function Header() {
@@ -15,7 +15,7 @@ function Header() {
       <Container>
         <Grid>
           <Art>
-            <img src={GraaspLogo} alt="Graasp logo" />
+            <GraaspLogo />
           </Art>
           <Text>
             <h1>{translateAssociation(ASSOCIATION.BANNER_TEXT)}</h1>

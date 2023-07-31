@@ -6,15 +6,15 @@ import ExternalLink from '@common/ExternalLink';
 
 import Carousel, { consts } from 'react-elastic-carousel';
 
-import { ReactComponent as GenevaLogo } from '@images/logos/geneva.svg';
-import { ReactComponent as UnctadLogo } from '@images/logos/unctad.svg';
-import { ReactComponent as GoLabLogo } from '@images/logos/golab.svg';
-import { ReactComponent as ColliderLogo } from '@images/logos/collider.svg';
-import { ReactComponent as EpflInnovationLogo } from '@images/logos/epfl-innovation.svg';
-import { ReactComponent as TremplinLogo } from '@images/logos/tremplin.svg';
-import { ReactComponent as UnineLogo } from '@images/logos/unine.svg';
-import { ReactComponent as GogaLogo } from '@images/logos/goga.svg';
 import { ASSOCIATION } from '@graasp/translations';
+import GenevaLogo from '../../images/logos/geneva.svg';
+import UnctadLogo from '../../images/logos/unctad.svg';
+import GoLabLogo from '../../images/logos/golab.svg';
+import ColliderLogo from '../../images/logos/collider.svg';
+import EpflInnovationLogo from '../../images/logos/epfl-innovation.svg';
+import TremplinLogo from '../../images/logos/tremplin.svg';
+import UnineLogo from '../../images/logos/unine.svg';
+import GogaLogo from '../../images/logos/goga.svg';
 import { useAssociationTranslation } from '../../config/i18n/i18n';
 
 const LOGOS = [
@@ -96,8 +96,7 @@ function UsedBy() {
                   margin: '0 15px',
                 }}
               >
-                <img src={logo} alt="logo" />
-                {/* TODO: check */}
+                {logo()}
               </ExternalLink>
             ))}
           </Carousel>
