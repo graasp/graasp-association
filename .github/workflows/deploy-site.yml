@@ -21,7 +21,8 @@ jobs:
 
       - name: Yarn build
         # Set environment variables required to perform the build. These are only available to this step
-        # env:
+        env:
+          GATSBY_GA_MEASUREMENT_ID: ${{ secrets.REACT_APP_GA_MEASUREMENT_ID_PROD }}
         run: yarn build
         shell: bash
 
