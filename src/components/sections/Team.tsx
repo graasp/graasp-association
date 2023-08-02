@@ -1,12 +1,12 @@
-import React, { forwardRef } from 'react';
-import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage, StaticImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
+import React from 'react';
+import styled from 'styled-components';
 
-import { Section, Container } from '@components/global';
+import { Container, Section } from '@components/global';
 
-import { ASSOCIATION } from '@graasp/translations';
 import { useAssociationTranslation } from '@config/i18n/i18n';
+import { ASSOCIATION } from '@graasp/translations';
 
 const TEAM = [
   {
@@ -71,7 +71,7 @@ const TEAM = [
   },
 ];
 
-const Team = forwardRef<HTMLElement>(({}, ref) => {
+const Team = () => {
   const { t: translateAssociation } = useAssociationTranslation();
   const { allFile } = useStaticQuery(graphql`
     {
@@ -88,7 +88,7 @@ const Team = forwardRef<HTMLElement>(({}, ref) => {
     }
   `);
   return (
-    <Section ref={ref} id="team" accent="secondary">
+    <Section id="team" accent="secondary">
       <Container style={{ position: 'relative' }}>
         <h1>{translateAssociation(ASSOCIATION.HEADER_TEAM)}</h1>
         <TeamGrid>
@@ -122,7 +122,7 @@ const Team = forwardRef<HTMLElement>(({}, ref) => {
       </Container>
     </Section>
   );
-});
+};
 
 const TeamGrid = styled.div`
   display: grid;

@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { Section, Container } from '@components/global';
@@ -59,11 +59,11 @@ const breakPoints = [
   { width: 900, itemsToShow: 4 },
 ];
 
-const Partners = forwardRef<HTMLElement>(({}, ref) => {
+const Partners = () => {
   const { t: translateAssociation } = useAssociationTranslation();
 
   return (
-    <Section ref={ref} id="partners" accent>
+    <Section id="partners" accent>
       <StyledContainer>
         <div>
           <h2 style={{ textAlign: 'center' }}>
@@ -104,7 +104,7 @@ const Partners = forwardRef<HTMLElement>(({}, ref) => {
       </StyledContainer>
     </Section>
   );
-});
+};
 
 const StyledContainer = styled(Container)`
   margin: 0 auto;
