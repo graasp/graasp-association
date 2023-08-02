@@ -1,0 +1,25 @@
+name: Build
+
+on:
+  push:
+
+
+jobs:
+  build-site:
+    name: Build Site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Yarn install and Cache dependencies
+        uses: graasp/graasp-deploy/.github/actions/yarn-install-and-cache@v1
+
+      - name: Yarn lint
+        run: yarn lint && yarn prettier --check
+        shell: bash
+
+      - name: Yarn build
+        # Set environment variables required to perform the build. These are only available to this step
+        run: yarn build
+        shell: bash
