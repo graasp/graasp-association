@@ -10,14 +10,21 @@ require('dotenv').config({
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
           include: /images\/.*\.svg/,
           // include: /images/,
-          omitKeys: ['xmlnsDc', 'xmlnsCc', 'xmlnsRdf', 'xmlnsSvg', 'xmlnsSodipodi', 'xmlnsInkscape']
-        }
-      }
+          omitKeys: [
+            'xmlnsDc',
+            'xmlnsCc',
+            'xmlnsRdf',
+            'xmlnsSvg',
+            'xmlnsSodipodi',
+            'xmlnsInkscape',
+          ],
+        },
+      },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
@@ -37,6 +44,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -60,6 +68,7 @@ module.exports = {
       options: {
         alias: {
           '@components': path.resolve(__dirname, 'src/components'),
+          '@config': path.resolve(__dirname, 'src/config'),
           '@common': path.resolve(__dirname, 'src/components/common'),
           '@images': path.resolve(__dirname, 'src/images'),
           '@sections': path.resolve(__dirname, 'src/components/sections'),

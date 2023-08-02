@@ -1,7 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-function TranslationPair({ englishCallback, frenchCallback }) {
+type Props = {
+  englishCallback: () => void;
+  frenchCallback: () => void;
+};
+
+function TranslationPair({ englishCallback, frenchCallback }: Props) {
   return (
     <div style={{ display: 'flex', marginRight: 20, marginLeft: 0 }}>
       <button
@@ -15,7 +19,6 @@ function TranslationPair({ englishCallback, frenchCallback }) {
         type="button"
         onClick={englishCallback}
       >
-        {' '}
         EN
       </button>
       <button
@@ -45,10 +48,5 @@ function TranslationPair({ englishCallback, frenchCallback }) {
     </div>
   );
 }
-
-TranslationPair.propTypes = {
-  englishCallback: PropTypes.func.isRequired,
-  frenchCallback: PropTypes.func.isRequired,
-};
 
 export default TranslationPair;

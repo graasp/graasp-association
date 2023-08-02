@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage, StaticImage, getImage } from 'gatsby-plugin-image';
 
 import { Section, Container } from '@components/global';
 
 import { ASSOCIATION } from '@graasp/translations';
-import { useAssociationTranslation } from '../../config/i18n/i18n';
+import { useAssociationTranslation } from '@config/i18n/i18n';
 
 const TEAM = [
   {
@@ -71,77 +71,94 @@ const TEAM = [
   },
 ];
 
-function Team() {
+const Team = forwardRef<HTMLElement>(({}, ref) => {
   const { t: translateAssociation } = useAssociationTranslation();
-
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          allFile(filter: { sourceInstanceName: { eq: "team" } }) {
-            edges {
-              node {
-                relativePath
-                childImageSharp {
-                  fluid(maxWidth: 400, maxHeight: 400) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
+  const { allFile } = useStaticQuery(graphql`
+    {
+      allFile(filter: { sourceInstanceName: { eq: "team" } }) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              gatsbyImageData(aspectRatio: 1)
             }
           }
         }
-      `}
-      render={(data) => (
-        <Section id="team" accent="secondary">
-          <Container style={{ position: 'relative' }}>
-            <h1>{translateAssociation(ASSOCIATION.HEADER_TEAM)}</h1>
-            <TeamGrid>
-              {TEAM.map(({ name, image, role }) => {
-                const img = data.allFile.edges.find(
-                  ({ node }) => node.relativePath === image,
-                ).node;
+      }
+    }
+  `);
+  return (
+    <Section ref={ref} id="team" accent="secondary">
+      <Container style={{ position: 'relative' }}>
+        <h1>{translateAssociation(ASSOCIATION.HEADER_TEAM)}</h1>
+        <TeamGrid>
+          {TEAM.map(({ name, image, role }) => {
+            const imageNode = allFile.edges?.find(
+              ({ node }: { node: { relativePath: string } }) =>
+                node.relativePath === image,
+            );
 
-                return (
-                  <div key={name}>
-                    <Img
-                      fluid={img.childImageSharp.fluid}
-                      alt={name}
-                      style={{ borderRadius: '50%' }}
-                    />
-                    <Title>{name}</Title>
-                    <Subtitle>{translateAssociation(role)}</Subtitle>
-                  </div>
-                );
-              })}
-            </TeamGrid>
-          </Container>
-        </Section>
-      )}
-    />
+            return (
+              <TeamWrapper key={name}>
+                {imageNode ? (
+                  <GatsbyImage
+                    image={imageNode.node.childImageSharp.gatsbyImageData}
+                    alt={name}
+                    style={{ borderRadius: '50%' }}
+                  />
+                ) : (
+                  <StaticImage
+                    src="../../images/team/graasp.png"
+                    alt={name}
+                    style={{ borderRadius: '50%' }}
+                  />
+                )}
+                <Title>{name}</Title>
+                <Subtitle>{translateAssociation(role)}</Subtitle>
+              </TeamWrapper>
+            );
+          })}
+        </TeamGrid>
+      </Container>
+    </Section>
   );
-}
+});
 
 const TeamGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 165px);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: min-content;
   grid-gap: 50px;
-  justify-content: space-between;
+  justify-content: center;
+  margin: auto;
   margin-top: 72px;
 
   @media (max-width: ${(props) => props.theme.screen.lg}) {
-    justify-content: start;
+    width: 100%;
   }
 
   @media (max-width: ${(props) => props.theme.screen.md}) {
     width: 100%;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: ${(props) => props.theme.screen.sm}) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media (max-width: ${(props) => props.theme.screen.xs}) {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 400px;
     grid-gap: 24px;
   }
+`;
+
+const TeamWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
 `;
 
 const Title = styled.p`

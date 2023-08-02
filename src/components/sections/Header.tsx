@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { Container } from '@components/global';
 
 import { ASSOCIATION } from '@graasp/translations';
-import GraaspLogo from '../../images/art/hand.svg';
-import { useAssociationTranslation } from '../../config/i18n/i18n';
+import GraaspLogo from '@images/art/hand.svg';
+import { useAssociationTranslation } from '@config/i18n/i18n';
 
 function Header() {
   const { t: translateAssociation } = useAssociationTranslation();

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div<{ fluid?: boolean }>`
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -30,7 +30,7 @@ export const Container = styled.div`
   `};
 `;
 
-export const Section = styled.section`
+export const Section = styled.section<{ accent?: boolean | string }>`
   padding: 128px 0;
   overflow: hidden;
 

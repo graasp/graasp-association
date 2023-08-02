@@ -4,26 +4,26 @@
 
 /* eslint-disable react/jsx-one-expression-per-line */
 
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { Section, Container } from '@components/global';
 
 import { Trans } from 'react-i18next';
 import { ASSOCIATION, namespaces } from '@graasp/translations';
 import FaqItem from '@common/FaqItem';
-import { useAssociationTranslation } from '../../config/i18n/i18n';
+import { useAssociationTranslation } from '@config/i18n/i18n';
 
 import {
   URL_GRAASP_SIGNUP,
   URL_GRAASP_ORG,
   MAILTO_CONTACT_GRAASP,
-} from '../../config/hrefs';
+} from '@config/hrefs';
 
-function Faq() {
+const Faq = forwardRef<HTMLElement>(({}, ref) => {
   const { t: translateAssociation } = useAssociationTranslation();
 
   return (
-    <Section id="faq">
+    <Section ref={ref} id="faq">
       <Container>
         <h1 style={{ marginBottom: 40, color: '#211E26' }}>
           {translateAssociation(ASSOCIATION.HEADER_FAQ)}
@@ -113,6 +113,6 @@ function Faq() {
       </Container>
     </Section>
   );
-}
+});
 
 export default Faq;

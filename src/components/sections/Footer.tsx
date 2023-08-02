@@ -12,37 +12,37 @@ import GithubIcon from '@static/icons/github.svg';
 import WebIcon from '@static/icons/web.svg';
 import LinkedInIcon from '@static/icons/linkedin.svg';
 import { ASSOCIATION } from '@graasp/translations';
-import GraaspLogoDark from '../../images/art/handDark.svg';
-import { useAssociationTranslation } from '../../config/i18n/i18n';
+import GraaspLogoDark from '@images/art/handDark.svg';
+import { useAssociationTranslation } from '@config/i18n/i18n';
 
 const copyright = `© Graasp 2014 - ${new Date().getFullYear()}`;
 
 const LOGOS = [
   {
-    logo: EcLogo,
+    Logo: <EcLogo />,
     link: 'https://ec.europa.eu/info/index_en',
   },
   {
-    logo: EpflLogo,
+    Logo: <EpflLogo />,
     link: 'https://www.epfl.ch/en/',
   },
   {
-    logo: SwissUniLogo,
+    Logo: <SwissUniLogo />,
     link: 'https://www.swissuniversities.ch',
   },
 ];
 
 const SOCIAL = [
   {
-    icon: LinkedInIcon,
+    Icon: <LinkedInIcon />,
     link: 'https://www.linkedin.com/company/graasp',
   },
   {
-    icon: GithubIcon,
+    Icon: <GithubIcon />,
     link: 'https://github.com/graasp/',
   },
   {
-    icon: WebIcon,
+    Icon: <WebIcon />,
     link: 'https://graasp.org',
   },
 ];
@@ -59,7 +59,7 @@ function Footer() {
               {translateAssociation(ASSOCIATION.HEADER_SUPPORTED_BY)}
             </h3>
             <LogoGrid>
-              {LOGOS.map(({ logo, link }) => (
+              {LOGOS.map(({ Logo, link }) => (
                 <ExternalLink
                   key={link}
                   href={link}
@@ -69,8 +69,7 @@ function Footer() {
                     alignItems: 'center',
                   }}
                 >
-                  {logo()}
-                  {/* TODO: repair */}
+                  {Logo}
                 </ExternalLink>
               ))}
             </LogoGrid>
@@ -78,18 +77,18 @@ function Footer() {
         </StyledLogoContainer>
       </Section>
       <Art>
-        <GraaspLogoDark />{' '}
+        <GraaspLogoDark />
       </Art>
       <FooterWrapper>
         <StyledContainer>
           <Copyright>{copyright}</Copyright>
-          <SocialIcons>
-            {SOCIAL.map(({ icon, link }) => (
+          {/* <SocialIcons>
+            {SOCIAL.map(({ Icon, link }) => (
               <ExternalLink key={link} href={link}>
-                <img src={icon} alt="link" />
+                {Icon}
               </ExternalLink>
             ))}
-          </SocialIcons>
+          </SocialIcons> */}
         </StyledContainer>
       </FooterWrapper>
     </>
@@ -156,7 +155,7 @@ const Copyright = styled.div`
 const Art = styled.figure`
   display: flex;
   justify-content: center;
-  margin: 0;
+  margin-bottom: 24px;
   margin-top: 48px;
 `;
 

@@ -1,53 +1,53 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import { Section, Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
-import Carousel, { consts } from 'react-elastic-carousel';
+import Carousel from 'react-elastic-carousel';
 
 import { ASSOCIATION } from '@graasp/translations';
-import GenevaLogo from '../../images/logos/geneva.svg';
-import UnctadLogo from '../../images/logos/unctad.svg';
-import GoLabLogo from '../../images/logos/golab.svg';
-import ColliderLogo from '../../images/logos/collider.svg';
-import EpflInnovationLogo from '../../images/logos/epfl-innovation.svg';
-import TremplinLogo from '../../images/logos/tremplin.svg';
-import UnineLogo from '../../images/logos/unine.svg';
-import GogaLogo from '../../images/logos/goga.svg';
-import { useAssociationTranslation } from '../../config/i18n/i18n';
+import GenevaLogo from '@images/logos/geneva.svg';
+import UnctadLogo from '@images/logos/unctad.svg';
+import GoLabLogo from '@images/logos/golab.svg';
+import ColliderLogo from '@images/logos/collider.svg';
+import EpflInnovationLogo from '@images/logos/epfl-innovation.svg';
+import TremplinLogo from '@images/logos/tremplin.svg';
+import UnineLogo from '@images/logos/unine.svg';
+import GogaLogo from '@images/logos/goga.svg';
+import { useAssociationTranslation } from '@config/i18n/i18n';
 
 const LOGOS = [
   {
-    logo: GenevaLogo,
+    Logo: <GenevaLogo />,
     link: 'https://www.ge.ch',
   },
   {
-    logo: UnctadLogo,
+    Logo: <UnctadLogo />,
     link: 'https://unctad.org',
   },
   {
-    logo: ColliderLogo,
+    Logo: <ColliderLogo />,
     link: 'https://www.edtech-collider.ch',
   },
   {
-    logo: UnineLogo,
+    Logo: <UnineLogo />,
     link: 'https://www.unine.ch',
   },
   {
-    logo: GoLabLogo,
+    Logo: <GoLabLogo />,
     link: 'https://www.golabz.eu',
   },
   {
-    logo: EpflInnovationLogo,
+    Logo: <EpflInnovationLogo />,
     link: 'https://epfl-innovationpark.ch',
   },
   {
-    logo: TremplinLogo,
+    Logo: <TremplinLogo />,
     link: 'https://tremplin.ens-lyon.fr',
   },
   {
-    logo: GogaLogo,
+    Logo: <GogaLogo />,
     link: 'https://go-ga.org',
   },
 ];
@@ -59,11 +59,11 @@ const breakPoints = [
   { width: 900, itemsToShow: 4 },
 ];
 
-function UsedBy() {
+const Partners = forwardRef<HTMLElement>(({}, ref) => {
   const { t: translateAssociation } = useAssociationTranslation();
 
   return (
-    <Section id="partners" accent>
+    <Section ref={ref} id="partners" accent>
       <StyledContainer>
         <div>
           <h2 style={{ textAlign: 'center' }}>
@@ -73,16 +73,15 @@ function UsedBy() {
             breakPoints={breakPoints}
             renderArrow={({ type, onClick }) => {
               const pointer =
-                type === consts.PREV ? (
+                type === 'PREV' ? (
                   <ArrowLeft onClick={onClick} />
                 ) : (
                   <ArrowRight onClick={onClick} />
                 );
               return <Button onClick={onClick}>{pointer}</Button>;
             }}
-            style={{ marginTop: 50 }}
           >
-            {LOGOS.map(({ logo, link }) => (
+            {LOGOS.map(({ Logo, link }) => (
               <ExternalLink
                 key={link}
                 href={link}
@@ -90,13 +89,14 @@ function UsedBy() {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  height: '250px',
+                  objectFit: 'cover',
+                  height: '200px',
                   width: '100%',
                   color: '#fff',
-                  margin: '0 15px',
+                  margin: '15px',
                 }}
               >
-                {logo()}
+                {Logo}
               </ExternalLink>
             ))}
           </Carousel>
@@ -104,7 +104,7 @@ function UsedBy() {
       </StyledContainer>
     </Section>
   );
-}
+});
 
 const StyledContainer = styled(Container)`
   margin: 0 auto;
@@ -148,4 +148,4 @@ const Button = styled.button`
   }
 `;
 
-export default UsedBy;
+export default Partners;

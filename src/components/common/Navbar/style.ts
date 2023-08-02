@@ -11,6 +11,11 @@ export const Nav = styled.nav`
   top: 0;
   z-index: 1000;
   display: flex;
+
+  .active-scroll-spy {
+    opacity: 1;
+    color: white;
+  }
 `;
 
 export const StyledContainer = styled(Container)`
@@ -37,17 +42,16 @@ export const NavItem = styled.li`
   }
 `;
 
-export const NavListWrapper = styled.div`
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
+export const NavListWrapper = styled.ul<{ mobile: boolean }>`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
 
-    ${({ mobile }) =>
-      mobile &&
-      `
+  ${({ mobile }) =>
+    mobile &&
+    `
         flex-direction: column;
         margin-top: 1em;
 
@@ -56,7 +60,6 @@ export const NavListWrapper = styled.div`
           margin-top: 0.75em;
         }
       `};
-  }
 `;
 
 export const MobileMenu = styled.div`
@@ -70,7 +73,7 @@ export const Brand = styled.div`
   color: ${(props) => props.theme.color.white.regular};
 `;
 
-export const Mobile = styled.div`
+export const Mobile = styled.div<{ hide?: boolean }>`
   display: none;
 
   @media (max-width: ${(props) => props.theme.screen.md}) {

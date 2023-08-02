@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { RefObject, useRef } from 'react';
 
 import Layout from '@common/Layout';
 import Navbar from '@common/Navbar';
@@ -10,21 +10,24 @@ import Team from '@sections/Team';
 import Faq from '@sections/Faq';
 import Footer from '@sections/Footer';
 import Background from '@sections/Background';
+import ScrollSpy from 'react-ui-scrollspy';
 
-function IndexPage() {
+const IndexPage = () => {
   return (
     <Layout>
       <Navbar />
-      <Background>
-        <Header />
-      </Background>
-      <About />
-      <Partners />
-      <Team />
-      <Faq />
+      <ScrollSpy>
+        <Background>
+          <Header />
+        </Background>
+        <About />
+        <Partners />
+        <Team />
+        <Faq />
+      </ScrollSpy>
       <Footer />
     </Layout>
   );
-}
+};
 
 export default IndexPage;
