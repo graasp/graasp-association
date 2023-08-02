@@ -26,9 +26,11 @@ function Header() {
   );
 }
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.div`
   background-color: ${(props) => props.theme.color.primary};
   opacity: 0.8;
+  width: 100%;
+  height: 100%;
   padding-top: 204px;
   padding-bottom: 180px;
 
