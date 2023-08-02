@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
 
 import { Section, Container } from '@components/global';
 
@@ -15,6 +14,7 @@ import {
   URL_GRAASP_INSIGHTS,
   URL_GRAASP_LIBRARY,
 } from '@config/hrefs';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const About = () => {
   const { t: translateAssociation } = useAssociationTranslation();
@@ -22,9 +22,7 @@ const About = () => {
     query {
       art_fast: file(sourceInstanceName: { eq: "art" }, name: { eq: "fast" }) {
         childImageSharp {
-          fluid(maxWidth: 760) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
+          gatsbyImageData(width: 760)
         }
       }
 
@@ -33,9 +31,7 @@ const About = () => {
         name: { eq: "learn_yourself" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 760) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
+          gatsbyImageData(width: 760)
         }
       }
 
@@ -44,9 +40,7 @@ const About = () => {
         name: { eq: "ideas" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 760) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
+          gatsbyImageData(width: 760)
         }
       }
 
@@ -55,9 +49,7 @@ const About = () => {
         name: { eq: "customers_pot" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 760) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
+          gatsbyImageData(width: 760)
         }
       }
 
@@ -66,9 +58,7 @@ const About = () => {
         name: { eq: "tell_story" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 760) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
+          gatsbyImageData(width: 760)
         }
       }
     }
@@ -86,12 +76,18 @@ const About = () => {
             </p>
           </div>
           <Art>
-            <Img fluid={data.art_learn.childImageSharp.fluid} />
+            <GatsbyImage
+              image={data.art_learn.childImageSharp.gatsbyImageData}
+              alt="learn"
+            />
           </Art>
         </Grid>
         <Grid inverse>
           <Art>
-            <Img fluid={data.art_ideas.childImageSharp.fluid} />
+            <GatsbyImage
+              image={data.art_ideas.childImageSharp.gatsbyImageData}
+              alt="ideas"
+            />
           </Art>
           <div>
             <h2>{translateAssociation(ASSOCIATION.ABOUT_ADAPTABLE_HEADER)}</h2>
@@ -126,12 +122,18 @@ const About = () => {
             <p>{translateAssociation(ASSOCIATION.ABOUT_SUPPORT_TEXT)}</p>
           </div>
           <Art>
-            <Img fluid={data.art_fast.childImageSharp.fluid} />
+            <GatsbyImage
+              image={data.art_fast.childImageSharp.gatsbyImageData}
+              alt="fast"
+            />
           </Art>
         </Grid>
         <Grid inverse>
           <Art>
-            <Img fluid={data.art_pot.childImageSharp.fluid} />
+            <GatsbyImage
+              image={data.art_pot.childImageSharp.gatsbyImageData}
+              alt="pot"
+            />
           </Art>
           <div>
             <h2>{translateAssociation(ASSOCIATION.ABOUT_COMMUNITY_HEADER)}</h2>
@@ -168,7 +170,10 @@ const About = () => {
             </p>
           </div>
           <Art>
-            <Img fluid={data.tell_story.childImageSharp.fluid} />
+            <GatsbyImage
+              image={data.tell_story.childImageSharp.gatsbyImageData}
+              alt="story"
+            />
           </Art>
         </Grid>
       </Container>

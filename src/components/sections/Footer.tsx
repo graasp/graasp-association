@@ -1,19 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Section, Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
+import { Container, Section } from '@components/global';
 
 import EcLogo from '@images/sponsors/ec.svg';
 import EpflLogo from '@images/sponsors/epfl.svg';
 import SwissUniLogo from '@images/sponsors/swissuniversities.svg';
 
-import GithubIcon from '@static/icons/github.svg';
-import WebIcon from '@static/icons/web.svg';
-import LinkedInIcon from '@static/icons/linkedin.svg';
-import { ASSOCIATION } from '@graasp/translations';
+import GithubIcon from '@images/icons/github.svg';
+import LinkedInIcon from '@images/icons/linkedin.svg';
+import WebIcon from '@images/icons/web.svg';
+
 import GraaspLogoDark from '@images/art/handDark.svg';
+
 import { useAssociationTranslation } from '@config/i18n/i18n';
+import { ASSOCIATION } from '@graasp/translations';
 
 const copyright = `© Graasp 2014 - ${new Date().getFullYear()}`;
 
@@ -82,13 +84,13 @@ function Footer() {
       <FooterWrapper>
         <StyledContainer>
           <Copyright>{copyright}</Copyright>
-          {/* <SocialIcons>
+          <SocialIcons>
             {SOCIAL.map(({ Icon, link }) => (
               <ExternalLink key={link} href={link}>
                 {Icon}
               </ExternalLink>
             ))}
-          </SocialIcons> */}
+          </SocialIcons>
         </StyledContainer>
       </FooterWrapper>
     </>
@@ -125,6 +127,7 @@ const StyledLogoContainer = styled(Container)`
 
 const SocialIcons = styled.div`
   display: flex;
+  gap: 12px;
 
   img {
     margin: 0 8px;

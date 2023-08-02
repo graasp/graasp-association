@@ -1,6 +1,3 @@
-// added a piece of 'langugeChanged' state to refresh this component when a language is changed
-// this raises the eslint flag disabled above
-// this section needs reworking (current iteration is to demo language toggle)
 import React, { useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
@@ -28,7 +25,6 @@ const NAV_ITEMS = [
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [languageChanged] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen((prevState) => !prevState);
@@ -70,11 +66,9 @@ const Navbar = () => {
             <TranslationPair
               englishCallback={() => {
                 i18n.changeLanguage('en');
-                // setLanguagelanguageChanged: true });
               }}
               frenchCallback={() => {
                 i18n.changeLanguage('fr');
-                // this.setState({ languageChanged: true });
               }}
             />
             <button type="button" onClick={toggleMobileMenu}>
@@ -99,11 +93,9 @@ const Navbar = () => {
         <TranslationPair
           englishCallback={() => {
             i18n.changeLanguage('en');
-            // this.setState({ languageChanged: true });
           }}
           frenchCallback={() => {
             i18n.changeLanguage('fr');
-            // this.setState({ languageChanged: true });
           }}
         />
       </Mobile>
