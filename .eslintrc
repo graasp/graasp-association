@@ -1,6 +1,8 @@
 {
   "extends": [
-    "react-app",
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:react/recommended",
     "airbnb",
     "prettier"
   ],
@@ -15,11 +17,13 @@
     "mocha": true,
     "jest": true
   },
+  "parserOptions": {
+    "ecmaVersion": 13
+  },
   "globals": {
     "cy": true,
     "Cypress": true
   },
-  "parser": "@babel/eslint-parser",
   "rules": {
     "import/no-unresolved": [
       2, {
