@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import { Container } from '@components/global';
@@ -14,7 +14,9 @@ import {
   Mobile,
 } from './style';
 import TranslationPair from './TranslationPair';
-import i18n from '../../../config/i18n/i18n';
+import i18n, { useAssociationTranslation } from '@config/i18n/i18n';
+import { Close } from '@mui/icons-material';
+import { Grow, Stack } from '@mui/material';
 
 const NAV_ITEMS = [
   { id: 'about', text: ASSOCIATION.NAV_ABOUT },
@@ -25,6 +27,11 @@ const NAV_ITEMS = [
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useAssociationTranslation();
+
+  useEffect(() => {
+    console.info(`Changed language to ${i18n.language}`);
+  }, [i18n.language]);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen((prevState) => !prevState);
@@ -45,7 +52,7 @@ const Navbar = () => {
             href={`#${id}`}
             onClick={closeMobileMenu}
           >
-            {i18n.t(text, { ns: namespaces.association })}
+            {t(text, { ns: namespaces.association })}
           </AnchorLink>
         </NavItem>
       ))}
@@ -55,49 +62,45 @@ const Navbar = () => {
   return (
     <Nav>
       <StyledContainer>
-        <Brand>Graasp</Brand>
-        <Mobile>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
+        <Brand>
+          <AnchorLink href={`#home`} data-to-scrollspy-id="home">
+            Graasp
+          </AnchorLink>
+        </Brand>
+        <Stack direction="row" spacing={2}>
+          <Mobile hide>
+            <NavList />
+          </Mobile>
+          <TranslationPair
+            englishCallback={() => {
+              i18n.changeLanguage('en');
             }}
-          >
-            <TranslationPair
-              englishCallback={() => {
-                i18n.changeLanguage('en');
-              }}
-              frenchCallback={() => {
-                i18n.changeLanguage('fr');
-              }}
-            />
+            frenchCallback={() => {
+              i18n.changeLanguage('fr');
+            }}
+          />
+          <Mobile>
             <button type="button" onClick={toggleMobileMenu}>
-              <MenuIcon htmlColor="white" />
+              {mobileMenuOpen ? (
+                <Close htmlColor="white" />
+              ) : (
+                <MenuIcon htmlColor="white" />
+              )}
             </button>
-          </div>
-        </Mobile>
-        <Mobile hide>
-          <NavList />
-        </Mobile>
+          </Mobile>
+        </Stack>
       </StyledContainer>
+      {/* Mobile Menu */}
       <Mobile>
         {mobileMenuOpen && (
-          <MobileMenu>
-            <Container fluid>
-              <NavList mobile />
-            </Container>
-          </MobileMenu>
+          <Grow in={mobileMenuOpen} style={{ transformOrigin: 'center 0' }}>
+            <MobileMenu>
+              <Container fluid>
+                <NavList mobile />
+              </Container>
+            </MobileMenu>
+          </Grow>
         )}
-      </Mobile>
-      <Mobile hide>
-        <TranslationPair
-          englishCallback={() => {
-            i18n.changeLanguage('en');
-          }}
-          frenchCallback={() => {
-            i18n.changeLanguage('fr');
-          }}
-        />
       </Mobile>
     </Nav>
   );

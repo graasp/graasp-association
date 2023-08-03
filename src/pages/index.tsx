@@ -16,7 +16,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Navbar />
-      <ScrollSpy>
+      <ScrollSpy offsetTop={72} offsetBottom={72}>
         <Background>
           <Header />
         </Background>

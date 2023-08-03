@@ -5,12 +5,14 @@ import { Container } from '@components/global';
 export const Nav = styled.nav`
   padding: 16px 0;
   background-color: ${(props) => props.theme.color.primary};
-  opacity: 0.8;
+  opacity: 0.9;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
   display: flex;
+  flex-direction: column;
+  justify-items: center;
 
   .active-scroll-spy {
     opacity: 1;
@@ -48,12 +50,13 @@ export const NavListWrapper = styled.ul<{ mobile: boolean }>`
   padding: 0;
   display: flex;
   flex-direction: row;
+  align-items: center;
 
   ${({ mobile }) =>
     mobile &&
     `
-        flex-direction: column;
-        margin-top: 1em;
+      flex-direction: column;
+      margin-top: 1em;
 
         > ${NavItem} {
           margin: 0;
@@ -68,9 +71,14 @@ export const MobileMenu = styled.div`
 `;
 
 export const Brand = styled.div`
+  text-decoration: none;
   font-family: ${(props) => props.theme.font.primary};
   ${(props) => props.theme.font_size.large};
   color: ${(props) => props.theme.color.white.regular};
+  a {
+    color: ${(props) => props.theme.color.white.regular};
+    text-decoration: none;
+  }
 `;
 
 export const Mobile = styled.div<{ hide?: boolean }>`
