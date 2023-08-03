@@ -42,9 +42,16 @@ module.exports = {
         path: `${__dirname}/src/images/art`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          placeholder: `blurred`,
+        },
+      },
+    },
     `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
