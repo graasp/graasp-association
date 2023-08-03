@@ -3,7 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 function Background({ children }: { children: ReactElement }) {
   return (
-    <div style={{ display: 'grid' }}>
+    <div id="home" style={{ display: 'grid' }}>
       <StaticImage
         style={{ gridArea: '1/1' }}
         src="../../images/art/background.jpg"

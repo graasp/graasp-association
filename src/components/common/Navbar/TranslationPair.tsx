@@ -1,51 +1,35 @@
+import { Divider, Stack } from '@mui/material';
 import React from 'react';
+import styled from 'styled-components';
 
 type Props = {
   englishCallback: () => void;
   frenchCallback: () => void;
 };
 
+const COLOR = 'rgba(255, 255,255, 0.7)';
+
+const LanguageButton = styled.button`
+  color: ${COLOR};
+`;
+
 function TranslationPair({ englishCallback, frenchCallback }: Props) {
   return (
-    <div style={{ display: 'flex', marginRight: 20, marginLeft: 0 }}>
-      <button
-        style={{
-          color: 'white',
-          opacity: 0.7,
-          fontSize: 14,
-          marginRight: 2,
-          cursor: 'pointer',
-        }}
-        type="button"
-        onClick={englishCallback}
-      >
-        EN
-      </button>
-      <button
-        style={{
-          color: 'white',
-          opacity: 0.7,
-          fontSize: 14,
-          cursor: 'default',
-        }}
-        type="button"
-      >
-        |
-      </button>
-      <button
-        style={{
-          color: 'white',
-          opacity: 0.7,
-          fontSize: 14,
-          marginLeft: 2,
-          cursor: 'pointer',
-        }}
-        type="button"
-        onClick={frenchCallback}
-      >
-        FR
-      </button>
-    </div>
+    <Stack
+      spacing={1}
+      divider={
+        <Divider
+          orientation="vertical"
+          flexItem
+          variant="inset"
+          style={{ borderColor: COLOR }}
+        />
+      }
+      direction="row"
+    >
+      <LanguageButton onClick={englishCallback}>EN</LanguageButton>
+      <LanguageButton onClick={frenchCallback}>FR</LanguageButton>
+    </Stack>
   );
 }
 

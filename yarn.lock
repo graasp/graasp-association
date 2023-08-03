@@ -11501,7 +11501,7 @@ __metadata:
     react-elastic-carousel: 0.11.5
     react-ga4: 2.1.0
     react-helmet: ^6.1.0
-    react-i18next: 13.0.2
+    react-i18next: 12.2.0
     react-router-dom: 6.14.2
     react-ui-scrollspy: 2.3.0
     styled-components: ^6.0.6
@@ -15919,21 +15919,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:13.0.2":
-  version: 13.0.2
-  resolution: "react-i18next@npm:13.0.2"
+"react-i18next@npm:12.2.0":
+  version: 12.2.0
+  resolution: "react-i18next@npm:12.2.0"
   dependencies:
-    "@babel/runtime": ^7.22.5
+    "@babel/runtime": ^7.20.6
     html-parse-stringify: ^3.0.1
   peerDependencies:
-    i18next: ">= 23.2.3"
+    i18next: ">= 19.0.0"
     react: ">= 16.8.0"
   peerDependenciesMeta:
     react-dom:
       optional: true
     react-native:
       optional: true
-  checksum: ab8226939f3681efb5a8628f938d90b3311336e69ca9aaf1ea54aad6fac3395516736971a3484234455f3831ecae8555f68c32fa1cd4d38b94ff69769da2b677
+  checksum: ed2d6a5bb6746c2ea25cca9531b400d62edef6479631c1113eb7a3c3f6b28d493492171d7dc6d87f61a7d7e9b21d4be3bd7eaf0f7af00392fb546d8c50267345
   languageName: node
   linkType: hard
 
