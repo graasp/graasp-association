@@ -15,6 +15,7 @@ import EpflInnovationLogo from '@images/logos/epfl-innovation.svg';
 import TremplinLogo from '@images/logos/tremplin.svg';
 import UnineLogo from '@images/logos/unine.svg';
 import GogaLogo from '@images/logos/goga.svg';
+import IHub4Schools from '@images/logos/ihub4schools.svg';
 import { useAssociationTranslation } from '@config/i18n/i18n';
 
 const LOGOS = [
@@ -33,6 +34,10 @@ const LOGOS = [
   {
     Logo: <UnineLogo />,
     link: 'https://www.unine.ch',
+  },
+  {
+    Logo: <IHub4Schools />,
+    link: 'https://www.ihub4schools.eu/',
   },
   {
     Logo: <GoLabLogo />,
