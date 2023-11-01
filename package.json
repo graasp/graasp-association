@@ -71,7 +71,7 @@
   "devDependencies": {
     "@commitlint/cli": "18.2.0",
     "@commitlint/config-conventional": "18.1.0",
-    "@types/react-anchor-link-smooth-scroll": "1.0.2",
+    "@types/react-anchor-link-smooth-scroll": "1.0.4",
     "babel-plugin-styled-components": "2.1.4",
     "eslint": "8.52.0",
     "eslint-config-airbnb": "19.0.4",
