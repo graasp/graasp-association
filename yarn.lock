@@ -5497,12 +5497,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-anchor-link-smooth-scroll@npm:1.0.2":
-  version: 1.0.2
-  resolution: "@types/react-anchor-link-smooth-scroll@npm:1.0.2"
+"@types/react-anchor-link-smooth-scroll@npm:1.0.4":
+  version: 1.0.4
+  resolution: "@types/react-anchor-link-smooth-scroll@npm:1.0.4"
   dependencies:
     "@types/react": "*"
-  checksum: d51dac44563f38b14a32844e091fc0d206ce7d7db7154206346cfa9d99e4f5e6faa812302fd79459662974540db94d674458c010f1226260beef49eb9b9171a9
+  checksum: 4f06aedd762a6e5af2777caf38eb327fcb8e6bcf3e19c2ce52325a6e00eec02fc031e4e3c50e2209e4f72494769d704700ffb2d9d1712207f9535dfeeb57c85c
   languageName: node
   linkType: hard
 
@@ -11630,7 +11630,7 @@ __metadata:
     "@mui/lab": 5.0.0-alpha.137
     "@mui/material": 5.14.3
     "@svgr/webpack": ^8.0.1
-    "@types/react-anchor-link-smooth-scroll": 1.0.2
+    "@types/react-anchor-link-smooth-scroll": 1.0.4
     babel-plugin-styled-components: 2.1.4
     dotenv: 16.3.1
     eslint: 8.52.0
