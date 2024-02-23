@@ -22,12 +22,12 @@ const TEAM = [
   {
     name: 'María Jesús Rodríguez-Triana',
     image: 'maria.jpg',
-    role: ASSOCIATION.TITLE_VP_EDUCATION,
+    role: ASSOCIATION.TITLE_VP_RESEARCH,
   },
   {
     name: 'Juan Carlos Farah',
     image: 'juancarlos.jpg',
-    role: ASSOCIATION.TITLE_VP_RESEARCH,
+    role: ASSOCIATION.TITLE_VP_PRODUCT,
   },
   {
     name: 'Kim Lan Phan Hoang',
