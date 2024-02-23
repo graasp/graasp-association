@@ -3561,12 +3561,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graasp/translations@npm:1.25.0":
-  version: 1.25.0
-  resolution: "@graasp/translations@npm:1.25.0"
+"@graasp/translations@npm:1.25.1":
+  version: 1.25.1
+  resolution: "@graasp/translations@npm:1.25.1"
   peerDependencies:
     i18next: ^23.8.1
-  checksum: 21efa5ff38e616c0ef46b42f65b85e6fe1bbfda056257b6b8d6142fea2044fb4421f6cbfe7ec46e09a4212ebd7f5e2a096f8671cd579d767df35ccf2d461d32c
+  checksum: 864f780981facc2ca8efe76c1cf509b6b9c012d3ee33ec404ef09f5599a3289ff8c2b37765757c822e9a52b474a2b10d171e4bcc7c2d869b4cc00fd5abc7b58d
   languageName: node
   linkType: hard
 
@@ -13355,7 +13355,7 @@ __metadata:
     "@emotion/react": 11.11.3
     "@emotion/styled": 11.11.0
     "@graasp/sdk": 1.1.3
-    "@graasp/translations": 1.25.0
+    "@graasp/translations": 1.25.1
     "@graasp/ui": 4.8.1
     "@mui/icons-material": 5.15.10
     "@mui/lab": 5.0.0-alpha.165
