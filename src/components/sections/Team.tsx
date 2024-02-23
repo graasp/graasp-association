@@ -17,7 +17,7 @@ const TEAM = [
   {
     name: 'Isabelle Vonèche Cardia',
     image: 'isabelle.jpg',
-    role: 'TITLE_MANAGING_DIRECTOR',
+    role: ASSOCIATION.TITLE_MANAGING_DIRECTOR,
   },
   {
     name: 'María Jesús Rodríguez-Triana',
@@ -37,26 +37,26 @@ const TEAM = [
   {
     name: 'Jérémy La Scala',
     image: 'jeremy.jpg',
-    role: 'TITLE_VP_OUTREACH',
+    role: ASSOCIATION.TITLE_VP_OUTREACH,
   },
   {
-    name: 'Alexandre Chau',
-    image: 'alexandre.jpg',
-    role: ASSOCIATION.TITLE_SOFTWARE_ENGINEER,
+    name: 'Sandy Ingram',
+    image: 'sandy.jpg',
+    role: ASSOCIATION.TITLE_VP_INNOVATION,
   },
   {
     name: 'Basile Spaenlehauer',
     image: 'basile.jpg',
-    role: ASSOCIATION.TITLE_SOFTWARE_ENGINEER,
+    role: ASSOCIATION.TITLE_VP_TECHNOLOGY,
+  },
+  {
+    name: 'Michele Notari',
+    image: 'michele.jpg',
+    role: ASSOCIATION.TITLE_VP_EDUCATION_AND_CONTENT,
   },
   {
     name: 'Hagop Taminian',
     image: 'hagop.jpg',
-    role: ASSOCIATION.TITLE_SOFTWARE_ENGINEER,
-  },
-  {
-    name: 'Álvaro Bautista',
-    image: 'alvaro.jpeg',
     role: ASSOCIATION.TITLE_SOFTWARE_ENGINEER,
   },
   {
