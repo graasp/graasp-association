@@ -13832,7 +13832,7 @@ __metadata:
     gatsby-source-filesystem: ^5.13.1
     gatsby-transformer-sharp: ^5.13.1
     husky: ^9.0.11
-    i18next: 23.10.1
+    i18next: 23.16.8
     next: 14.1.4
     prettier: 3.3.3
     pretty-quick: 4.0.0
@@ -14317,12 +14317,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:23.10.1":
-  version: 23.10.1
-  resolution: "i18next@npm:23.10.1"
+"i18next@npm:23.16.8":
+  version: 23.16.8
+  resolution: "i18next@npm:23.16.8"
   dependencies:
     "@babel/runtime": ^7.23.2
-  checksum: 4aec10ddb0bb841f15b9b023daa59977052bc706ca4e94643b12b17640731862bde596c9797491638f6d9e7f125722ea9b1e87394c7aebbb72f45c20396f79d9
+  checksum: 288dab98225d769c6ad7835e9c534a184a2a8fb28485000f35b10c467439478047b367d39015c1920ac9c5cfc33572ffd75ecf1778edcd96536024bf594f4ca9
   languageName: node
   linkType: hard
 
